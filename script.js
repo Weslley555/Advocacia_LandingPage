@@ -151,3 +151,36 @@ document.addEventListener("DOMContentLoaded", function () {
     aviso.style.display = "none";
   });
 });
+
+// ========== ANIMAÇÃO FADE IN UP - FAIXA DE PROVA SOCIAL (INTERSECTION OBSERVER) ==========
+document.addEventListener("DOMContentLoaded", function () {
+  const trustBanner = document.getElementById("trust-banner");
+
+  // Verifica se o elemento existe na página
+  if (!trustBanner) return;
+
+  // Configuração do IntersectionObserver
+  const observerOptions = {
+    root: null, // Usa o viewport como referência
+    rootMargin: "0px",
+    threshold: 0.2, // Dispara quando 20% do elemento está visível
+  };
+
+  // Callback que será executado quando o elemento entrar no viewport
+  const observerCallback = function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Adiciona a classe 'visible' que ativa a animação
+        entry.target.classList.add("visible");
+        // Para de observar o elemento após a animação (opcional)
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Cria o observer
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  // Começa a observar o trust banner
+  observer.observe(trustBanner);
+});
