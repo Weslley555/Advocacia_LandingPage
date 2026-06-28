@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Site</title>
+
+        <!-- Título e Descrição Básica para o Google -->
+        <meta name="description" content="Descrição do site" />
+
+        <!-- Configuração para o WhatsApp, Facebook e Instagram (Open Graph) -->
+        <meta property="og:title" content="Site" />
+        <meta property="og:description" content="Descrição do site" />
+        <meta
+            property="og:image"
+            content="https://seusite.com.br/imagens/capa.jpg"
+        />
+        <meta property="og:url" content="https://seusite.com.br" />
+        <meta property="og:type" content="website" />
+
+        <!-- Google Analytics: carregado apenas após consentimento de cookies (LGPD) -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            function carregarAnalytics() {
+                var script = document.createElement("script");
+                script.async = true;
+                script.src =
+                    "https://www.googletagmanager.com/gtag/js?id=G-5WRWWNTSXB";
+                document.head.appendChild(script);
+                script.onload = function () {
+                    gtag("js", new Date());
+                    gtag("config", "G-5WRWWNTSXB");
+                };
+            }
+
+            // Se já aceitou em visita anterior, carrega direto
+            if (localStorage.getItem("cookiesAceitos") === "sim") {
+                carregarAnalytics();
+            }
+        </script>
+
+        <link rel="stylesheet" href="style.css?v=5" />
+    </head>
+    <body>
+        <div class="colunas">
+            <div class="content-container-esquerda">
+                <div class="cabecalho-logo">
+                    <img
+                        src="imagens/logo.png"
+                        alt="Logo"
+                        class="imagem-logo"
+                    />
+                </div>
+
+                <div class="textos-chamativos">
+                    <h2 class="titulo-destaque">Dr. Weslley</h2>
+                    <p class="mini-texto">
+                        Especialista de casos de vazamentos de informações
+                        pessoais.
+                    </p>
+                    <p class="titulo-endereco">
+                        Rua Que não existe, 123, Cidade
+                    </p>
+                </div>
+
+                <!-- BOTÕES DE NAVEGAÇÃO -->
+                <nav class="navegacao-servicos">
+                    <!-- Botão 1 -->
+                    <div class="div-botao">
+                        <a href="#secao1">
+                            <img
+                                src="imagens/botao1.svg"
+                                alt="Ir para Seção 1"
+                                class="img-botao"
+                            />
+                        </a>
+                    </div>
+
+                    <!-- Botão 2 -->
+                    <div class="div-botao">
+                        <a href="#secao2">
+                            <img
+                                src="imagens/botao2.svg"
+                                alt="Ir para Seção 2"
+                                class="img-botao"
+                            />
+                        </a>
+                    </div>
+
+                    <!-- Botão 3 -->
+                    <div class="div-botao">
+                        <a href="#secao3">
+                            <img
+                                src="imagens/botao3.svg"
+                                alt="Ir para Seção 3"
+                                class="img-botao"
+                            />
+                        </a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="content-container-direita">
+                <!-- ========== HERO CAROUSEL (CARROSSEL PRINCIPAL) ========== -->
+                <section id="hero-carousel" class="hero-carousel">
+                    <!-- SLIDE 1 -->
+                    <div class="hero-slide active">
+                        <div
+                            class="hero-image"
+                            style="
+                                background-image: url(&quot;imagens/hero-slide-1.svg&quot;);
+                            "
+                        ></div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title">
+                                Proteção de Dados na Era Digital
+                            </h1>
+                            <p class="hero-subtitle">
+                                Especialistas em vazamento de informações
+                                pessoais e segurança digital
+                            </p>
+                            <a href="#contato" class="hero-cta"
+                                >Fale com um Especialista</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 -->
+                    <div class="hero-slide">
+                        <div
+                            class="hero-image"
+                            style="
+                                background-image: url(&quot;imagens/hero-slide-2.svg&quot;);
+                            "
+                        ></div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title">
+                                Segurança Jurídica para seus Dados
+                            </h1>
+                            <p class="hero-subtitle">
+                                Atuação estratégica em casos de violação da LGPD
+                            </p>
+                            <a href="#contato" class="hero-cta"
+                                >Fale com um Especialista</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 3 -->
+                    <div class="hero-slide">
+                        <div
+                            class="hero-image"
+                            style="
+                                background-image: url(&quot;imagens/hero-slide-3.svg&quot;);
+                            "
+                        ></div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title">
+                                Defesa Especializada em Crimes Digitais
+                            </h1>
+                            <p class="hero-subtitle">
+                                Experiência comprovada em litígios complexos de
+                                tecnologia
+                            </p>
+                            <a href="#contato" class="hero-cta"
+                                >Fale com um Especialista</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- CONTROLES DE NAVEGAÇÃO -->
+                    <button
+                        class="hero-arrow hero-arrow-left"
+                        onclick="mudarSlideHero(-1)"
+                        aria-label="Slide Anterior"
+                    >
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M15 18L9 12L15 6"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+                    <button
+                        class="hero-arrow hero-arrow-right"
+                        onclick="mudarSlideHero(1)"
+                        aria-label="Próximo Slide"
+                    >
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M9 18L15 12L9 6"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+
+                    <!-- DOTS DE PAGINAÇÃO -->
+                    <div class="hero-dots">
+                        <span
+                            class="hero-dot active"
+                            onclick="irParaSlideHero(0)"
+                        ></span>
+                        <span
+                            class="hero-dot"
+                            onclick="irParaSlideHero(1)"
+                        ></span>
+                        <span
+                            class="hero-dot"
+                            onclick="irParaSlideHero(2)"
+                        ></span>
+                    </div>
+                </section>
+                <!-- ========== FIM DO HERO CAROUSEL ========== -->
+
+                <hr class="separador-secao" />
+
+                <!-- SEÇÃO 1 -->
+                <div class="secao self-service-area" id="secao1">
+                    <h2 class="titulo-secao">Seção 1</h2>
+
+                    <!-- Botões de Troca (Tabs) -->
+                    <div class="botoes-dias">
+                        <button
+                            class="btn-dia ativo"
+                            onclick="mostrarAba('semana', this)"
+                        >
+                            Opção 1
+                        </button>
+                        <button
+                            class="btn-dia"
+                            onclick="mostrarAba('domingo', this)"
+                        >
+                            Opção 2
+                        </button>
+                    </div>
+
+                    <!-- CONTEÚDO: OPÇÃO 1 -->
+                    <div id="aba-semana" class="conteudo-aba ativa">
+                        <!-- Mini Carrossel (Scroll Horizontal) -->
+                        <div class="carrossel-mini">
+                            <img
+                                src="imagens/imagem1.png"
+                                alt="Imagem 1"
+                                class="img-carrossel"
+                            />
+                            <img
+                                src="imagens/imagem2.png"
+                                alt="Imagem 2"
+                                class="img-carrossel"
+                            />
+                            <img
+                                src="imagens/imagem3.png"
+                                alt="Imagem 3"
+                                class="img-carrossel"
+                            />
+                        </div>
+
+                        <div class="textos-explicativos">
+                            <h3>Título da Opção 1</h3>
+                            <p>Descrição da opção 1.</p>
+
+                            <!-- Preços Destacados -->
+                            <div class="caixa-preco-destaque">
+                                <div class="preco-item dinheiro">
+                                    <span class="valor">R$ 00,00</span>
+                                    <span class="forma-pgto">forma 1</span>
+                                </div>
+                                <span class="separador-ou">ou</span>
+                                <div class="preco-item cartao">
+                                    <span class="valor">R$ 00,00</span>
+                                    <span class="forma-pgto">forma 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTEÚDO: OPÇÃO 2 -->
+                    <div id="aba-domingo" class="conteudo-aba">
+                        <!-- Mini Carrossel (Scroll Horizontal) -->
+                        <div class="carrossel-mini">
+                            <img
+                                src="imagens/imagem1.png"
+                                alt="Imagem 1"
+                                class="img-carrossel"
+                            />
+                            <img
+                                src="imagens/imagem2.png"
+                                alt="Imagem 2"
+                                class="img-carrossel"
+                            />
+                            <img
+                                src="imagens/imagem3.png"
+                                alt="Imagem 3"
+                                class="img-carrossel"
+                            />
+                        </div>
+
+                        <div class="textos-explicativos">
+                            <h3>Título da Opção 2</h3>
+                            <p>Descrição da opção 2.</p>
+
+                            <!-- Preços Menos Destacados -->
+                            <div class="precos-domingo">
+                                <div class="opcao-domingo">
+                                    <h4>Suboção 1</h4>
+                                    <span class="preco-discreto">R$ 00,00</span>
+                                </div>
+                                <div class="opcao-domingo">
+                                    <h4>Subopção 2</h4>
+                                    <span class="preco-discreto"
+                                        >R$ 00,00 <small>/ unidade</small></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="separador-secao" />
+
+                <!-- SEÇÃO 2 -->
+                <div class="secao delivery-area" id="secao2">
+                    <div class="delivery-conteudo">
+                        <div class="delivery-texto">
+                            <h2 class="titulo-secao">Título da Seção 2</h2>
+                            <p class="descricao-delivery">
+                                Descrição da seção 2.
+                            </p>
+
+                            <!-- Vantagens -->
+                            <div class="vantagens-delivery">
+                                <div class="vantagem">
+                                    ✓ <span>Vantagem 1</span>
+                                </div>
+                                <div class="vantagem">
+                                    ✓ <span>Vantagem 2</span>
+                                </div>
+                                <div class="vantagem">
+                                    ✓ <span>Vantagem 3</span>
+                                </div>
+                            </div>
+
+                            <div class="delivery-imagem">
+                                <img
+                                    src="imagens/imagem4.png"
+                                    alt="Imagem destaque seção 2"
+                                    class="img-destaque-delivery"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Botão de Ação -->
+                        <a
+                            href="https://wa.me/"
+                            target="_blank"
+                            class="link-whatsapp"
+                        >
+                            <img
+                                src="imagens/botao_acao.svg"
+                                alt="Botão de Ação"
+                                class="btn-peca-aqui"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="separador-secao" />
+
+                <!-- SEÇÃO 3 -->
+                <div class="secao eventos-area" id="secao3">
+                    <h2 class="titulo-secao text-center">Título da Seção 3</h2>
+                    <p class="descricao-eventos">Descrição da seção 3.</p>
+
+                    <!-- CARROSSEL DE IMAGENS -->
+                    <div class="carrossel-container">
+                        <button
+                            class="btn-carrossel prev"
+                            onclick="mudarSlide(-1)"
+                        >
+                            &#10094;
+                        </button>
+                        <div class="carrossel-track-wrapper">
+                            <div class="carrossel-track" id="track-eventos">
+                                <img
+                                    src="imagens/imagem5.png"
+                                    alt="Imagem 5"
+                                    class="slide-evento"
+                                />
+                                <img
+                                    src="imagens/imagem6.png"
+                                    alt="Imagem 6"
+                                    class="slide-evento"
+                                />
+                                <img
+                                    src="imagens/imagem7.png"
+                                    alt="Imagem 7"
+                                    class="slide-evento"
+                                />
+                                <img
+                                    src="imagens/imagem8.png"
+                                    alt="Imagem 8"
+                                    class="slide-evento"
+                                />
+                                <img
+                                    src="imagens/imagem9.png"
+                                    alt="Imagem 9"
+                                    class="slide-evento"
+                                />
+                            </div>
+                        </div>
+                        <button
+                            class="btn-carrossel next"
+                            onclick="mudarSlide(1)"
+                        >
+                            &#10095;
+                        </button>
+                    </div>
+
+                    <!-- PLANOS -->
+                    <div class="container-planos">
+                        <!-- Plano 1 -->
+                        <div class="cartao-plano">
+                            <h3>Plano 1</h3>
+                            <ul class="lista-beneficios">
+                                <li>✔️ Benefício 1</li>
+                                <li>✔️ Benefício 2</li>
+                                <li>✔️ Benefício 3</li>
+                                <li>✔️ Benefício 4</li>
+                            </ul>
+                            <a
+                                href="https://wa.me/55SEUNUMERO?text=Olá, gostaria de informações sobre o Plano 1"
+                                target="_blank"
+                                class="btn-orcamento"
+                                >Saiba mais</a
+                            >
+                        </div>
+
+                        <!-- Plano 2 (Destacado) -->
+                        <div class="cartao-plano destaque">
+                            <div class="badge-recomendado">Destaque</div>
+                            <h3>Plano 2</h3>
+                            <ul class="lista-beneficios">
+                                <li>✔️ Benefício 1</li>
+                                <li>✔️ Benefício 2</li>
+                                <li>✔️ Benefício 3</li>
+                                <li>✔️ Benefício 4</li>
+                            </ul>
+                            <a
+                                href="https://wa.me/55SEUNUMERO?text=Olá, gostaria de informações sobre o Plano 2"
+                                target="_blank"
+                                class="btn-orcamento"
+                                >Saiba mais</a
+                            >
+                        </div>
+
+                        <!-- Plano 3 -->
+                        <div class="cartao-plano">
+                            <h3>Plano 3</h3>
+                            <ul class="lista-beneficios">
+                                <li>✔️ Benefício 1</li>
+                                <li>✔️ Benefício 2</li>
+                                <li>✔️ Benefício 3</li>
+                                <li>✔️ Benefício 4</li>
+                            </ul>
+                            <a
+                                href="https://wa.me/55SEUNUMERO?text=Olá, gostaria de informações sobre o Plano 3"
+                                target="_blank"
+                                class="btn-orcamento"
+                                >Saiba mais</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fim .colunas -->
+
+        <footer class="rodape-minimalista">
+            <span>&copy; 2026 Site</span>
+            <span class="separador">|</span>
+            <a href="#contato">Contato</a>
+            <a href="#social">Social</a>
+            <a href="termos_uso.html">Termos de Uso</a>
+            <a href="politica_privacidade.html">Política de Privacidade</a>
+        </footer>
+
+        <div id="aviso-cookies" class="aviso-cookies">
+            <p>
+                Usamos cookies para analisar o tráfego e melhorar sua
+                experiência. Você pode aceitar ou recusar — o site funciona
+                normalmente nas duas opções. Saiba mais em nossa
+                <a href="politica_privacidade.html">Política de Privacidade</a>
+                e nos nossos
+                <a href="termos_uso.html">Termos de Uso</a>.
+            </p>
+            <div class="botoes-cookies">
+                <button id="btn-aceitar-cookies" class="btn-cookies aceitar">
+                    Aceitar
+                </button>
+                <button id="btn-recusar-cookies" class="btn-cookies recusar">
+                    Recusar
+                </button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

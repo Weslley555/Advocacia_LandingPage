@@ -1,0 +1,134 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1419;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a2332;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1419;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f2fe;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#4facfe;stop-opacity:0.4" />
+    </linearGradient>
+    <linearGradient id="gold3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7b733;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#fc4a1a;stop-opacity:0.5" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00f2fe;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg3)"/>
+
+  <!-- Digital Forensics Screen -->
+  <g transform="translate(300, 200)">
+    <rect x="0" y="0" width="600" height="400" fill="#0a1520" opacity="0.8" rx="8"/>
+    <rect x="0" y="0" width="600" height="400" fill="none" stroke="#00f2fe" stroke-width="3" opacity="0.7" rx="8"/>
+
+    <!-- Terminal Header -->
+    <rect x="0" y="0" width="600" height="40" fill="#00f2fe" opacity="0.2" rx="8 8 0 0"/>
+    <circle cx="20" cy="20" r="6" fill="#fc4a1a" opacity="0.7"/>
+    <circle cx="40" cy="20" r="6" fill="#f7b733" opacity="0.7"/>
+    <circle cx="60" cy="20" r="6" fill="#4facfe" opacity="0.7"/>
+
+    <!-- Terminal Code -->
+    <text x="20" y="80" font-family="monospace" font-size="14" fill="#00f2fe" opacity="0.7">$ forensic-analysis --deep-scan</text>
+    <text x="20" y="110" font-family="monospace" font-size="14" fill="#4facfe" opacity="0.6">&gt; Analyzing data breach...</text>
+    <text x="20" y="140" font-family="monospace" font-size="14" fill="#4facfe" opacity="0.6">&gt; Scanning IP logs [████████] 100%</text>
+    <text x="20" y="170" font-family="monospace" font-size="14" fill="#4facfe" opacity="0.6">&gt; Extracting metadata...</text>
+    <text x="20" y="200" font-family="monospace" font-size="14" fill="#f7b733" opacity="0.7">⚠ Suspicious activity detected</text>
+    <text x="20" y="230" font-family="monospace" font-size="14" fill="#00f2fe" opacity="0.6">&gt; Location: 192.168.x.xxx</text>
+    <text x="20" y="260" font-family="monospace" font-size="14" fill="#00f2fe" opacity="0.6">&gt; Timestamp: 2026-06-27 14:32:18</text>
+    <text x="20" y="290" font-family="monospace" font-size="14" fill="#4facfe" opacity="0.6">&gt; Evidence collected ✓</text>
+  </g>
+
+  <!-- Network Analysis Graph -->
+  <g transform="translate(1100, 300)">
+    <!-- Axes -->
+    <line x1="0" y1="300" x2="500" y2="300" stroke="#4facfe" stroke-width="2" opacity="0.5"/>
+    <line x1="0" y1="0" x2="0" y2="300" stroke="#4facfe" stroke-width="2" opacity="0.5"/>
+
+    <!-- Graph line -->
+    <polyline points="0,280 50,250 100,260 150,200 200,210 250,150 300,170 350,100 400,120 450,60 500,80"
+              fill="none"
+              stroke="url(#accent3)"
+              stroke-width="3"
+              opacity="0.7"/>
+
+    <!-- Data points -->
+    <circle cx="150" cy="200" r="8" fill="#f7b733" opacity="0.8"/>
+    <circle cx="250" cy="150" r="8" fill="#fc4a1a" opacity="0.8"/>
+    <circle cx="350" cy="100" r="8" fill="#00f2fe" opacity="0.8"/>
+
+    <!-- Grid -->
+    <g opacity="0.2">
+      <line x1="0" y1="75" x2="500" y2="75" stroke="#4facfe" stroke-width="1" stroke-dasharray="5,5"/>
+      <line x1="0" y1="150" x2="500" y2="150" stroke="#4facfe" stroke-width="1" stroke-dasharray="5,5"/>
+      <line x1="0" y1="225" x2="500" y2="225" stroke="#4facfe" stroke-width="1" stroke-dasharray="5,5"/>
+    </g>
+  </g>
+
+  <!-- Magnifying Glass (Investigation) -->
+  <g transform="translate(1500, 700)">
+    <circle cx="0" cy="0" r="60" fill="none" stroke="url(#gold3)" stroke-width="6" opacity="0.7"/>
+    <circle cx="0" cy="0" r="70" fill="url(#glow)"/>
+    <line x1="42" y1="42" x2="90" y2="90" stroke="url(#gold3)" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- Binary in glass -->
+    <text x="0" y="-10" text-anchor="middle" font-family="monospace" font-size="12" fill="#00f2fe" opacity="0.6">101</text>
+    <text x="0" y="10" text-anchor="middle" font-family="monospace" font-size="12" fill="#00f2fe" opacity="0.6">010</text>
+  </g>
+
+  <!-- Circuit Board Pattern -->
+  <g opacity="0.15">
+    <circle cx="200" cy="700" r="5" fill="#00f2fe"/>
+    <circle cx="300" cy="750" r="5" fill="#00f2fe"/>
+    <circle cx="250" cy="850" r="5" fill="#00f2fe"/>
+    <line x1="200" y1="700" x2="300" y2="750" stroke="#00f2fe" stroke-width="2"/>
+    <line x1="300" y1="750" x2="250" y2="850" stroke="#00f2fe" stroke-width="2"/>
+
+    <rect x="180" y="680" width="40" height="40" fill="none" stroke="#4facfe" stroke-width="2"/>
+    <rect x="280" y="730" width="40" height="40" fill="none" stroke="#4facfe" stroke-width="2"/>
+  </g>
+
+  <!-- Cyber Security Shield -->
+  <g transform="translate(600, 700)">
+    <path d="M 0,-50 L 40,-50 L 40,10 Q 40,60 20,80 Q 0,60 0,10 Z"
+          fill="none"
+          stroke="url(#accent3)"
+          stroke-width="3"
+          opacity="0.6"/>
+    <path d="M 10,-30 L 15,-25 L 28,-40"
+          fill="none"
+          stroke="#00f2fe"
+          stroke-width="2"
+          stroke-linecap="round"
+          opacity="0.7"/>
+  </g>
+
+  <!-- Hexagonal Data Nodes -->
+  <g opacity="0.3" fill="none" stroke="#4facfe" stroke-width="2">
+    <polygon points="1700,150 1730,170 1730,210 1700,230 1670,210 1670,170"/>
+    <polygon points="1750,150 1780,170 1780,210 1750,230 1720,210 1720,170"/>
+    <polygon points="1725,195 1755,215 1755,255 1725,275 1695,255 1695,215"/>
+    <circle cx="1700" cy="190" r="4" fill="#00f2fe"/>
+    <circle cx="1750" cy="190" r="4" fill="#00f2fe"/>
+    <circle cx="1725" cy="235" r="4" fill="#00f2fe"/>
+  </g>
+
+  <!-- Scanning Lines -->
+  <g opacity="0.15">
+    <rect x="300" y="600" width="600" height="2" fill="url(#accent3)">
+      <animate attributeName="y" from="600" to="200" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Warning Sign -->
+  <g transform="translate(1200, 150)">
+    <polygon points="0,60 -50,-30 50,-30" fill="none" stroke="#fc4a1a" stroke-width="4" opacity="0.6"/>
+    <text x="0" y="10" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#fc4a1a" opacity="0.7">!</text>
+  </g>
+</svg>

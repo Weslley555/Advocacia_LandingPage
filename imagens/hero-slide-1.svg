@@ -1,0 +1,101 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a2a3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1b2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3a7bd5;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#00d2ff;stop-opacity:0.4" />
+    </linearGradient>
+    <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#a78b50;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg1)"/>
+
+  <!-- Digital Grid Pattern -->
+  <g opacity="0.15">
+    <line x1="0" y1="100" x2="1920" y2="100" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1920" y2="200" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1920" y2="300" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1920" y2="400" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="500" x2="1920" y2="500" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="600" x2="1920" y2="600" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="700" x2="1920" y2="700" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="800" x2="1920" y2="800" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="0" y1="900" x2="1920" y2="900" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="1200" y1="0" x2="1200" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="1400" y1="0" x2="1400" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+    <line x1="1600" y1="0" x2="1600" y2="1080" stroke="#3a7bd5" stroke-width="1"/>
+  </g>
+
+  <!-- Shield Icon (Protection) -->
+  <g transform="translate(1200, 300)">
+    <path d="M 0,0 L 120,0 L 120,80 Q 120,200 60,240 Q 0,200 0,80 Z"
+          fill="url(#gold1)"
+          stroke="#d4af37"
+          stroke-width="4"
+          opacity="0.7"/>
+    <circle cx="60" cy="80" r="35" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+    <path d="M 50,80 L 58,88 L 74,68"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="4"
+          stroke-linecap="round"
+          opacity="0.8"/>
+  </g>
+
+  <!-- Lock Icon -->
+  <g transform="translate(400, 700)">
+    <rect x="0" y="40" width="80" height="60" fill="url(#gold1)" stroke="#d4af37" stroke-width="3" rx="5" opacity="0.6"/>
+    <path d="M 20,40 L 20,20 Q 20,0 40,0 Q 60,0 60,20 L 60,40"
+          fill="none"
+          stroke="#d4af37"
+          stroke-width="4"
+          opacity="0.7"/>
+    <circle cx="40" cy="70" r="8" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <!-- Binary Code Pattern -->
+  <g opacity="0.2" fill="#00d2ff" font-family="monospace" font-size="18">
+    <text x="100" y="200">01001100 01000111 01010000 01000100</text>
+    <text x="120" y="240">10100101 10010111 11001010 10110011</text>
+    <text x="80" y="280">01010011 01000101 01000011 01010101</text>
+    <text x="1400" y="400">11010010 10101100 01110011 10010101</text>
+    <text x="1420" y="440">01000100 01000001 01010100 01000001</text>
+    <text x="1380" y="480">10110010 11001001 10100111 01101011</text>
+  </g>
+
+  <!-- Network Nodes -->
+  <g opacity="0.4">
+    <circle cx="300" cy="400" r="8" fill="#3a7bd5"/>
+    <circle cx="500" cy="350" r="8" fill="#3a7bd5"/>
+    <circle cx="700" cy="450" r="8" fill="#3a7bd5"/>
+    <circle cx="600" cy="550" r="8" fill="#3a7bd5"/>
+    <line x1="300" y1="400" x2="500" y2="350" stroke="#3a7bd5" stroke-width="2"/>
+    <line x1="500" y1="350" x2="700" y2="450" stroke="#3a7bd5" stroke-width="2"/>
+    <line x1="700" y1="450" x2="600" y2="550" stroke="#3a7bd5" stroke-width="2"/>
+    <line x1="600" y1="550" x2="300" y2="400" stroke="#3a7bd5" stroke-width="2"/>
+  </g>
+
+  <!-- Decorative Elements -->
+  <circle cx="1600" cy="800" r="150" fill="none" stroke="url(#accent1)" stroke-width="2" opacity="0.3"/>
+  <circle cx="1600" cy="800" r="180" fill="none" stroke="url(#accent1)" stroke-width="1" opacity="0.2"/>
+
+  <!-- Light Rays -->
+  <g opacity="0.1">
+    <polygon points="960,0 1000,300 920,300" fill="url(#accent1)"/>
+    <polygon points="960,1080 1000,780 920,780" fill="url(#accent1)"/>
+  </g>
+</svg>
