@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap");
 * {
     box-sizing: border-box;
 }
@@ -65,24 +65,6 @@ body {
     flex: 1;
 }
 
-.content-container-topo {
-    background-color: darkslategray;
-    width: 15%;
-    height: auto;
-    position: sticky;
-    top: 0;
-    flex-shrink: 0;
-    overflow-y: visible;
-    z-index: 100;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 60px;
-}
-
 /* logo */
 
 .logo {
@@ -137,6 +119,7 @@ body {
 .titulo-endereco {
     font-size: 12px;
     font-weight: 600;
+    margin-left: auto;
     margin: 0;
     line-height: 1.2;
     color: rgba(167, 139, 80, 0.95);
@@ -197,36 +180,6 @@ body {
 .img-botao:active {
     transform: translateY(-1px);
     box-shadow: 0 3px 10px rgba(167, 139, 80, 0.2);
-}
-
-.secao {
-    min-height: 100vh; /* Faz cada bloco ocupar a altura inteira da tela */
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza o texto no meio da tela temporariamente */
-    align-items: center;
-    font-family: sans-serif;
-    font-size: 24px;
-}
-
-/* Cores de marcação temporárias */
-
-.inicio {
-    background-color: white;
-    color: black;
-}
-.azul {
-    background-color: blue;
-    color: white;
-}
-.verde {
-    background-color: green;
-    color: white;
-}
-.roxa {
-    background-color: purple;
-    color: white;
 }
 
 /*linha separadora - Estilo Advocacia*/
@@ -705,319 +658,6 @@ body {
 }
 /* ========== FIM DA SEÇÃO C: ÁREAS DE ATUAÇÃO ==========  */
 
-/* --- SEÇÃO INICIAL (Removida - Substituída pelo Hero Carousel) --- */
-.inicio {
-    background-color: #ffffff;
-    padding: 30px 20px 60px 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: auto;
-}
-
-.destaque-principal {
-    display: none; /* Removido - agora usamos o Hero Carousel */
-}
-
-.imagem-destaque {
-    display: none; /* Removido */
-}
-
-.texto-marketing {
-    display: none; /* Removido */
-}
-
-/* --- SEÇÃO SELF SERVICE (REMOVIDA) --- */
-.self-service-area {
-    display: none; /* Removida - substituída pela seção de áreas de atuação */
-}
-
-.titulo-secao {
-    display: none;
-    font-size: 28px;
-}
-
-/* --- BOTÕES DE ABAS (REMOVIDOS) --- */
-.botoes-dias,
-.btn-dia,
-.btn-dia.ativo,
-.conteudo-aba,
-.conteudo-aba.ativa,
-.carrossel-mini,
-.carrossel-mini::-webkit-scrollbar,
-.carrossel-mini::-webkit-scrollbar-thumb,
-.img-carrossel,
-.textos-explicativos,
-.textos-explicativos h3,
-.textos-explicativos p,
-.caixa-preco-destaque {
-    display: none; /* Removidos - não são mais necessários */
-}
-
-.preco-item,
-.preco-item .valor,
-.preco-item .forma-pgto,
-.separador-ou,
-.precos-domingo,
-.opcao-domingo,
-.opcao-domingo h4,
-.preco-discreto {
-    display: none; /* Removidos */
-}
-
-/* --- SEÇÃO DELIVERY --- */
-.delivery-area {
-    background-color: #ffffff; /* Fundo limpo para destacar a foto */
-    padding: 80px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.delivery-conteudo {
-    display: flex;
-    flex-direction: column; /* Coloca os textos e depois a foto embaixo */
-    align-items: center;
-    gap: 40px;
-    max-width: 800px;
-}
-
-.delivery-texto {
-    text-align: center;
-}
-
-.descricao-delivery {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Selos de Confiança */
-.vantagens-delivery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-    flex-wrap: wrap; /* Permite quebrar linha se a tela for pequena */
-}
-
-.vantagem {
-    background-color: #fff3f3; /* Fundo vermelho bem clarinho */
-    color: #6a0909;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Imagem do Delivery */
-.img-destaque-delivery {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-}
-
-/* --- BOTÃO DO WHATSAPP COM ANIMAÇÃO --- */
-.link-whatsapp {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    animation: pulsar 2s infinite; /* A mágica que faz o botão pulsar */
-}
-
-.link-whatsapp:hover {
-    transform: scale(1.05);
-    animation: none; /* Para de pulsar quando o cliente passa o mouse */
-}
-
-.btn-peca-aqui {
-    width: 250px;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Keyframes da animação de pulsar */
-@keyframes pulsar {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* --- SEÇÃO EVENTOS E FESTAS --- */
-.eventos-area {
-    background-color: #f9f9f9; /* Um cinza muito claro para diferenciar das outras abas */
-    padding: 80px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.descricao-eventos {
-    text-align: center;
-    color: #555;
-    max-width: 600px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-    font-size: 16px;
-}
-
-/* Carrossel de Imagens */
-.carrossel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 60px;
-    width: 100%;
-    max-width: 800px;
-}
-
-.carrossel-track-wrapper {
-    overflow: hidden; /* Esconde as imagens que estão fora da tela */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    width: 100%;
-}
-
-.carrossel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out; /* Animação de deslizar suave */
-}
-
-.slide-evento {
-    width: 100%;
-    flex-shrink: 0;
-    height: 350px;
-    object-fit: cover;
-}
-
-.btn-carrossel {
-    background-color: #6a0909;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-carrossel:hover {
-    background-color: #420505;
-}
-
-/* Planos Estilo SaaS */
-.container-planos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.cartao-plano {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 30px 25px;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    position: relative;
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s;
-}
-
-.cartao-plano:hover {
-    transform: translateY(-5px); /* Efeito de flutuar ao passar o mouse */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Destacando o plano do meio (Buffet) */
-.cartao-plano.destaque {
-    border: 2px solid #6a0909;
-    transform: scale(1.05); /* Deixa ele um pouco maior */
-}
-
-.cartao-plano.destaque:hover {
-    transform: scale(1.05) translateY(-5px);
-}
-
-.badge-recomendado {
-    position: absolute;
-    top: -12px;
-    background-color: #6a0909;
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.cartao-plano h3 {
-    font-family: "Montserrat", sans-serif;
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.lista-beneficios {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 30px 0;
-    width: 100%;
-    flex-grow: 1;
-}
-
-.lista-beneficios li {
-    color: #555;
-    font-size: 14px;
-    margin-bottom: 12px;
-    line-height: 1.4;
-    border-bottom: 1px solid #f1f1f1;
-    padding-bottom: 8px;
-}
-
-.btn-orcamento {
-    background-color: #25d366; /* Cor verde padrão do WhatsApp */
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 15px;
-    width: 100%;
-    text-align: center;
-    transition: background 0.3s;
-}
-
-.btn-orcamento:hover {
-    background-color: #1ebd5a;
-}
-
 /* ========================================
    SEÇÃO D - SOBRE O PROFISSIONAL
    ======================================== */
@@ -1397,7 +1037,7 @@ body {
 }
 
 .cabecalho-simples img {
-    height: 450px; /* Ajuste conforme o tamanho da sua logo */
+    height: 60px; /* Altura corrigida — era 450px por engano */
 }
 
 .container-legal {
@@ -1445,7 +1085,7 @@ body {
 
 .btn-cta-interno {
     display: inline-block;
-    background: linear-gradient(135deg, #420505 0%, #6a0909 100%);
+    background: #0a0e1a;
     color: white;
     font-family: "Montserrat", sans-serif;
     font-size: 1.1rem;
@@ -1458,7 +1098,7 @@ body {
 }
 
 .btn-cta-interno:hover {
-    background: linear-gradient(135deg, #6a0909 0%, #420505 100%);
+    background: linear-gradient(135deg, green 0%, green 100%);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(66, 5, 5, 0.4);
 }
@@ -1733,14 +1373,6 @@ body {
         min-height: 300px;
         padding: 30px 20px;
     }
-
-    .container-planos {
-        flex-direction: column;
-    }
-
-    .cartao-plano {
-        width: 100%;
-    }
 }
 
 /* --- MOBILE (até 768px) --- */
@@ -1880,16 +1512,6 @@ body {
         border-radius: 6px;
     }
 
-    /* Seções com padding reduzido */
-    .secao {
-        padding: 30px 20px;
-        min-height: auto;
-    }
-
-    .inicio {
-        padding: 20px 15px 40px 15px;
-    }
-
     /* Áreas de Atuação - Mobile */
     .areas-atuacao {
         padding: 50px 20px;
@@ -1932,76 +1554,6 @@ body {
     .card-description {
         font-size: 0.9rem;
         margin-bottom: 16px;
-    }
-
-    /* Delivery */
-    .delivery-area {
-        padding: 50px 20px;
-    }
-
-    .delivery-conteudo {
-        max-width: 100%;
-        gap: 25px;
-    }
-
-    .descricao-delivery {
-        font-size: 15px;
-    }
-
-    .vantagens-delivery {
-        gap: 10px;
-    }
-
-    .vantagem {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-
-    .img-destaque-delivery {
-        max-width: 100%;
-    }
-
-    .btn-peca-aqui {
-        width: 200px;
-    }
-
-    /* Eventos */
-    .eventos-area {
-        padding: 50px 20px;
-    }
-
-    .carrossel-container {
-        gap: 8px;
-    }
-
-    .slide-evento {
-        height: 220px;
-    }
-
-    .btn-carrossel {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-    }
-
-    /* Planos em coluna */
-    .container-planos {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cartao-plano {
-        width: 100%;
-        max-width: 360px;
-    }
-
-    /* Remove o scale no plano destaque para não vazar */
-    .cartao-plano.destaque {
-        transform: none;
-    }
-
-    .cartao-plano.destaque:hover {
-        transform: translateY(-5px);
     }
 
     /* Footer */
@@ -2072,7 +1624,7 @@ body {
 
     /* Cabeçalho simples */
     .cabecalho-simples img {
-        height: 120px;
+        height: 50px;
     }
 
     .container-legal {
@@ -2168,28 +1720,6 @@ body {
 
     .card-description {
         font-size: 0.85rem;
-    }
-
-    .img-carrossel {
-        width: 200px;
-        height: 130px;
-    }
-
-    .btn-dia {
-        padding: 8px 14px;
-        font-size: 13px;
-    }
-
-    .slide-evento {
-        height: 180px;
-    }
-
-    .titulo-secao {
-        font-size: 20px;
-    }
-
-    .texto-marketing {
-        font-size: 14px;
     }
 
     /* Trust Banner - Mobile Pequeno */

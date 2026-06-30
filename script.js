@@ -8,17 +8,11 @@ function mostrarSlideHero(indice) {
   const slides = document.querySelectorAll(".hero-slide");
   const dots = document.querySelectorAll(".hero-dot");
 
-  // Remove a classe 'active' de todos os slides e dots
   slides.forEach((slide) => slide.classList.remove("active"));
   dots.forEach((dot) => dot.classList.remove("active"));
 
-  // Adiciona 'active' ao slide e dot corretos
-  if (slides[indice]) {
-    slides[indice].classList.add("active");
-  }
-  if (dots[indice]) {
-    dots[indice].classList.add("active");
-  }
+  if (slides[indice]) slides[indice].classList.add("active");
+  if (dots[indice]) dots[indice].classList.add("active");
 }
 
 // Função para mudar slide (setas)
@@ -26,12 +20,9 @@ function mudarSlideHero(direcao) {
   const slides = document.querySelectorAll(".hero-slide");
   const totalSlides = slides.length;
 
-  // Pausa o autoplay quando o usuário interage
   pausarAutoplayHero();
-
   indiceSlideHero += direcao;
 
-  // Loop infinito
   if (indiceSlideHero >= totalSlides) {
     indiceSlideHero = 0;
   } else if (indiceSlideHero < 0) {
@@ -39,8 +30,6 @@ function mudarSlideHero(direcao) {
   }
 
   mostrarSlideHero(indiceSlideHero);
-
-  // Reinicia o autoplay após 2 segundos de inatividade
   reiniciarAutoplayHero();
 }
 
@@ -52,14 +41,12 @@ function irParaSlideHero(indice) {
   reiniciarAutoplayHero();
 }
 
-// Função de autoplay
 function iniciarAutoplayHero() {
   temporizadorHero = setInterval(() => {
     mudarSlideHero(1);
   }, intervaloAutoplayHero);
 }
 
-// Pausar autoplay
 function pausarAutoplayHero() {
   if (temporizadorHero) {
     clearInterval(temporizadorHero);
@@ -67,76 +54,40 @@ function pausarAutoplayHero() {
   }
 }
 
-// Reiniciar autoplay após interação
 function reiniciarAutoplayHero() {
   pausarAutoplayHero();
   setTimeout(() => {
     iniciarAutoplayHero();
-  }, 2000); // Aguarda 2 segundos antes de voltar ao autoplay
+  }, 2000);
 }
 
-// Pausar ao passar o mouse sobre o carrossel
+// Inicialização do Hero Carousel
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.getElementById("hero-carousel");
 
   if (carousel) {
-    // Inicia o autoplay quando a página carrega
     iniciarAutoplayHero();
-
-    // Pausa quando o mouse entra
     carousel.addEventListener("mouseenter", pausarAutoplayHero);
-
-    // Retoma quando o mouse sai
     carousel.addEventListener("mouseleave", iniciarAutoplayHero);
   }
 });
 
-// Função para trocar as abas do Self Service
-function mostrarAba(aba, elementoClicado) {
-  document.getElementById("aba-semana").classList.remove("ativa");
-  document.getElementById("aba-domingo").classList.remove("ativa");
-
-  let botoes = document.querySelectorAll(".btn-dia");
-  botoes.forEach((btn) => btn.classList.remove("ativo"));
-
-  document.getElementById("aba-" + aba).classList.add("ativa");
-  elementoClicado.classList.add("ativo");
-}
-
-// --- LÓGICA DO CARROSSEL DE EVENTOS ---
-let indiceSlide = 0;
-
-function mudarSlide(direcao) {
-  const track = document.getElementById("track-eventos");
-  const slides = document.querySelectorAll(".slide-evento");
-  const totalSlides = slides.length;
-
-  indiceSlide += direcao;
-
-  if (indiceSlide >= totalSlides) {
-    indiceSlide = 0;
-  } else if (indiceSlide < 0) {
-    indiceSlide = totalSlides - 1;
-  }
-
-  track.style.transform = `translateX(-${indiceSlide * 100}%)`;
-}
-
-// --- LÓGICA DO AVISO DE COOKIES + GOOGLE ANALYTICS (LGPD) ---
+// --- LÓGICA DO AVISO DE COOKIES (LGPD) ---
 document.addEventListener("DOMContentLoaded", function () {
   const aviso = document.getElementById("aviso-cookies");
   const btnAceitar = document.getElementById("btn-aceitar-cookies");
   const btnRecusar = document.getElementById("btn-recusar-cookies");
+
+  if (!aviso || !btnAceitar || !btnRecusar) return;
+
   const decisao = localStorage.getItem("cookiesAceitos");
 
-  // Se já tomou uma decisão antes, esconde o banner
   if (decisao !== null) {
     aviso.style.display = "none";
   } else {
     aviso.style.display = "flex";
   }
 
-  // Aceitar: salva consentimento e carrega o Analytics
   btnAceitar.addEventListener("click", function () {
     localStorage.setItem("cookiesAceitos", "sim");
     aviso.style.display = "none";
@@ -145,174 +96,108 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Recusar: salva recusa, Analytics não é carregado
   btnRecusar.addEventListener("click", function () {
     localStorage.setItem("cookiesAceitos", "nao");
     aviso.style.display = "none";
   });
 });
 
-// ========== ANIMAÇÃO FADE IN UP - FAIXA DE PROVA SOCIAL (INTERSECTION OBSERVER) ==========
+// ========== ANIMAÇÃO FADE IN UP - FAIXA DE PROVA SOCIAL ==========
 document.addEventListener("DOMContentLoaded", function () {
   const trustBanner = document.getElementById("trust-banner");
 
-  // Verifica se o elemento existe na página
   if (!trustBanner) return;
 
-  // Configuração do IntersectionObserver
-  const observerOptions = {
-    root: null, // Usa o viewport como referência
-    rootMargin: "0px",
-    threshold: 0.2, // Dispara quando 20% do elemento está visível
-  };
+  const observer = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.2 },
+  );
 
-  // Callback que será executado quando o elemento entrar no viewport
-  const observerCallback = function (entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Adiciona a classe 'visible' que ativa a animação
-        entry.target.classList.add("visible");
-        // Para de observar o elemento após a animação (opcional)
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  // Cria o observer
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  // Começa a observar o trust banner
   observer.observe(trustBanner);
 });
 
-// ========== ANIMAÇÃO CASCATA - SEÇÃO ÁREAS DE ATUAÇÃO (INTERSECTION OBSERVER) ==========
+// ========== ANIMAÇÃO CASCATA - SEÇÃO ÁREAS DE ATUAÇÃO ==========
 document.addEventListener("DOMContentLoaded", function () {
   const areasSection = document.getElementById("areas-atuacao");
 
-  // Verifica se a seção existe na página
   if (!areasSection) return;
 
   const cards = document.querySelectorAll(".card-item");
 
-  // Configuração do IntersectionObserver
-  const observerOptions = {
-    root: null, // Usa o viewport como referência
-    rootMargin: "0px",
-    threshold: 0.15, // Dispara quando 15% da seção está visível
-  };
-
-  // Callback que será executado quando a seção entrar no viewport
-  const observerCallback = function (entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Anima cada card com um delay progressivo (efeito cascata)
-        cards.forEach((card, index) => {
-          setTimeout(() => {
-            card.classList.add("animate");
-          }, index * 150); // 150ms de delay entre cada card
-        });
-
-        // Para de observar após iniciar as animações
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  // Cria o observer
   const cardsObserver = new IntersectionObserver(
-    observerCallback,
-    observerOptions,
+    function (entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add("animate");
+            }, index * 150);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.15 },
   );
 
-  // Começa a observar a seção de áreas de atuação
   cardsObserver.observe(areasSection);
 });
-// ========== FIM DA ANIMAÇÃO CASCATA ==========
 
-// ========================================
-// ANIMAÇÃO FADE IN LATERAL - SEÇÃO SOBRE O PROFISSIONAL
-// ========================================
-
+// ========== ANIMAÇÃO FADE IN LATERAL - SEÇÃO SOBRE O PROFISSIONAL ==========
 document.addEventListener("DOMContentLoaded", function () {
   const sobreSection = document.getElementById("sobre-profissional");
 
-  // Verifica se a seção existe na página
   if (!sobreSection) return;
 
   const colunaFoto = sobreSection.querySelector(".coluna-foto");
   const colunaTexto = sobreSection.querySelector(".coluna-texto");
 
-  // Configuração do IntersectionObserver
-  const observerOptions = {
-    root: null, // Usa o viewport como referência
-    rootMargin: "0px",
-    threshold: 0.2, // Dispara quando 20% do elemento está visível
-  };
-
-  // Callback que será executado quando o elemento entrar no viewport
-  const observerCallback = function (entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Adiciona a classe 'visible' que ativa as animações
-        if (colunaFoto) colunaFoto.classList.add("visible");
-        if (colunaTexto) colunaTexto.classList.add("visible");
-
-        // Para de observar após iniciar as animações
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  // Cria o observer
   const sobreObserver = new IntersectionObserver(
-    observerCallback,
-    observerOptions,
+    function (entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (colunaFoto) colunaFoto.classList.add("visible");
+          if (colunaTexto) colunaTexto.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.2 },
   );
 
-  // Começa a observar a seção sobre o profissional
   sobreObserver.observe(sobreSection);
 });
 
-// ========================================
-// BOTÃO CTA WHATSAPP - PULSE ESTÁ NO CSS
-// (A animação pulse já está implementada via @keyframes no CSS)
-// Não requer JavaScript adicional, mas você pode adicionar
-// eventos de tracking de cliques aqui se necessário
-// ========================================
-
-// Exemplo opcional de tracking de clique no botão WhatsApp:
+// ========== BOTÃO CTA WHATSAPP - TRACKING ==========
 document.addEventListener("DOMContentLoaded", function () {
   const btnWhatsApp = document.querySelector(".btn-whatsapp-cta");
 
   if (btnWhatsApp) {
-    btnWhatsApp.addEventListener("click", function (e) {
-      // Analytics ou tracking podem ser adicionados aqui
+    btnWhatsApp.addEventListener("click", function () {
       console.log("Botão WhatsApp clicado - Seção CTA Final");
-
-      // Se você estiver usando Google Analytics:
-      // gtag('event', 'click', {
-      //   'event_category': 'CTA',
-      //   'event_label': 'WhatsApp Final'
-      // });
+      // gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'WhatsApp Final' });
     });
   }
 });
 
-// ========================================
-// FAQ ACCORDION - LÓGICA INTERATIVA
-// ========================================
-
+// ========== FAQ ACCORDION ==========
 document.addEventListener("DOMContentLoaded", function () {
   const faqSection = document.getElementById("faq-section");
 
-  // Verifica se a seção FAQ existe na página
   if (!faqSection) return;
 
   const faqHeader = document.querySelector(".faq-header");
   const faqItems = document.querySelectorAll(".faq-item");
   const faqQuestions = document.querySelectorAll(".faq-question");
 
-  // ===== ANIMAÇÃO DE ENTRADA DO TÍTULO =====
+  // Animação de entrada do título
   const headerObserver = new IntersectionObserver(
     function (entries) {
       entries.forEach((entry) => {
@@ -322,101 +207,71 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    {
-      root: null,
-      threshold: 0.2,
-    },
+    { root: null, threshold: 0.2 },
   );
 
-  if (faqHeader) {
-    headerObserver.observe(faqHeader);
-  }
+  if (faqHeader) headerObserver.observe(faqHeader);
 
-  // ===== ANIMAÇÃO CASCATA DOS ITENS =====
+  // Animação cascata dos itens
   const itemsObserver = new IntersectionObserver(
     function (entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Anima cada item com delay progressivo (efeito cascata)
           faqItems.forEach((item, index) => {
             setTimeout(() => {
               item.classList.add("animate");
-            }, index * 100); // 100ms entre cada item
+            }, index * 100);
           });
-
-          // Para de observar após iniciar animações
           itemsObserver.unobserve(entry.target);
         }
       });
     },
-    {
-      root: null,
-      threshold: 0.1,
-    },
+    { root: null, threshold: 0.1 },
   );
 
-  if (faqSection) {
-    itemsObserver.observe(faqSection);
-  }
+  itemsObserver.observe(faqSection);
 
-  // ===== LÓGICA DO ACCORDION =====
+  // Lógica do accordion
   faqQuestions.forEach((question) => {
     question.addEventListener("click", function () {
       const faqItem = this.parentElement;
       const faqAnswer = faqItem.querySelector(".faq-answer");
       const isActive = faqItem.classList.contains("active");
 
-      // Fecha todos os outros itens (comportamento acordeon)
+      // Fecha todos os outros itens
       faqItems.forEach((item) => {
         if (item !== faqItem) {
           item.classList.remove("active");
           const answer = item.querySelector(".faq-answer");
-          if (answer) {
-            answer.style.maxHeight = null;
-          }
+          if (answer) answer.style.maxHeight = null;
         }
       });
 
       // Alterna o item clicado
       if (isActive) {
-        // Fecha o item se já estava aberto
         faqItem.classList.remove("active");
         faqAnswer.style.maxHeight = null;
       } else {
-        // Abre o item
         faqItem.classList.add("active");
-        // Define o max-height dinamicamente baseado no conteúdo
         faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
       }
     });
   });
 
-  // ===== SUPORTE PARA DEEP LINKING (ABRIR PERGUNTA ESPECÍFICA VIA URL) =====
-  // Exemplo: pagina.html#faq-1 irá abrir automaticamente a primeira pergunta
+  // Deep linking: abrir pergunta específica via URL (ex: pagina.html#faq-1)
   if (window.location.hash && window.location.hash.startsWith("#faq-")) {
     const targetId = window.location.hash.substring(1);
     const targetItem = document.getElementById(targetId);
 
     if (targetItem && targetItem.classList.contains("faq-item")) {
-      // Aguarda as animações iniciais
       setTimeout(() => {
-        // Abre o item
         targetItem.classList.add("active");
         const answer = targetItem.querySelector(".faq-answer");
-        if (answer) {
-          answer.style.maxHeight = answer.scrollHeight + "px";
-        }
-
-        // Rola suavemente até o item
+        if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
         targetItem.scrollIntoView({ behavior: "smooth", block: "center" });
-
-        // Adiciona um destaque visual temporário
         targetItem.classList.add("highlight");
-        setTimeout(() => {
-          targetItem.classList.remove("highlight");
-        }, 1500);
+        setTimeout(() => targetItem.classList.remove("highlight"), 1500);
       }, 500);
     }
   }
 });
-// ========== FIM DA LÓGICA FAQ ACCORDION ==========
