@@ -565,6 +565,146 @@ body {
     }
 }
 
+@keyframes cardSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== SEÇÃO C: ÁREAS DE ATUAÇÃO ========== */
+.areas-atuacao {
+    background-color: #fcfcfc;
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.areas-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.areas-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #051326;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.areas-subtitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Grid de Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Card Individual */
+.card-item {
+    background: white;
+    border-radius: 8px;
+    padding: 35px 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 320px;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Animação cascata ativa */
+.card-item.animate {
+    animation: cardSlideUp 0.6s ease-out forwards;
+}
+
+/* Efeito Hover */
+.card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Ícone do Card */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #051326;
+    transition: color 0.3s ease;
+}
+
+.card-item:hover .card-icon {
+    color: #c7a86f;
+}
+
+/* Título do Card */
+.card-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #051326;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+/* Descrição do Card */
+.card-description {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botão "Saiba Mais" */
+.card-link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #051326;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.card-link:hover {
+    color: #c7a86f;
+    border-bottom-color: #c7a86f;
+    gap: 10px;
+}
+/* ========== FIM DA SEÇÃO C: ÁREAS DE ATUAÇÃO ==========  */
+
 /* --- SEÇÃO INICIAL (Removida - Substituída pelo Hero Carousel) --- */
 .inicio {
     background-color: #ffffff;
@@ -587,171 +727,42 @@ body {
     display: none; /* Removido */
 }
 
-/* --- SEÇÃO SELF SERVICE --- */
+/* --- SEÇÃO SELF SERVICE (REMOVIDA) --- */
 .self-service-area {
-    background-color: #fcfcfc; /* Fundo quase branco para separar da primeira seção */
-    padding: 60px 40px;
-    align-items: center;
+    display: none; /* Removida - substituída pela seção de áreas de atuação */
 }
 
 .titulo-secao {
-    font-family: "Montserrat", sans-serif;
-    color: #420505;
-    margin-bottom: 30px;
+    display: none;
     font-size: 28px;
 }
 
-/* --- BOTÕES DE ABAS --- */
-.botoes-dias {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.btn-dia {
-    background-color: #e0e0e0;
-    color: #555;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 30px; /* Botões arredondados */
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-dia.ativo {
-    background-color: #6a0909; /* Cor principal quando está selecionado */
-    color: #ffffff;
-    box-shadow: 0 4px 10px rgba(106, 9, 9, 0.3);
-}
-
-/* --- CONTROLE DAS ABAS --- */
-.conteudo-aba {
-    display: none; /* Esconde tudo por padrão */
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    animation: fadeIn 0.4s ease-in-out; /* Efeito suave ao aparecer */
-}
-
-.conteudo-aba.ativa {
-    display: flex; /* Mostra apenas a aba que tem a classe "ativa" */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- CARROSSEL MINIATURA --- */
-.carrossel-mini {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-    max-width: 600px;
-    overflow-x: auto; /* Cria a rolagem horizontal */
-    scroll-snap-type: x mandatory; /* Faz a imagem "travar" no meio da tela ao rolar */
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-
-/* Esconde a barra de rolagem para ficar mais elegante */
-.carrossel-mini::-webkit-scrollbar {
-    height: 6px;
-}
-.carrossel-mini::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 4px;
-}
-
-.img-carrossel {
-    flex: 0 0 auto;
-    width: 280px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    scroll-snap-align: center;
-}
-
-/* --- TEXTOS E PREÇOS --- */
-.textos-explicativos {
-    text-align: center;
-    max-width: 600px;
-}
-
-.textos-explicativos h3 {
-    font-family: "Montserrat", sans-serif;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.textos-explicativos p {
-    color: #555;
-    font-size: 16px;
-    margin-bottom: 25px;
-    line-height: 1.5;
-}
-
-/* Preço Destacado (Seg-Sab) */
+/* --- BOTÕES DE ABAS (REMOVIDOS) --- */
+.botoes-dias,
+.btn-dia,
+.btn-dia.ativo,
+.conteudo-aba,
+.conteudo-aba.ativa,
+.carrossel-mini,
+.carrossel-mini::-webkit-scrollbar,
+.carrossel-mini::-webkit-scrollbar-thumb,
+.img-carrossel,
+.textos-explicativos,
+.textos-explicativos h3,
+.textos-explicativos p,
 .caixa-preco-destaque {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    background-color: #fff3f3;
-    padding: 20px;
-    border-radius: 12px;
-    border: 2px dashed #6a0909;
+    display: none; /* Removidos - não são mais necessários */
 }
 
-.preco-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.preco-item .valor {
-    font-size: 26px;
-    font-weight: bold;
-    color: #6a0909;
-}
-
-.preco-item .forma-pgto {
-    font-size: 13px;
-    color: #777;
-    text-transform: uppercase;
-}
-
-.separador-ou {
-    font-weight: bold;
-    color: #aaa;
-}
-
-/* Preço Discreto (Domingo) */
-.precos-domingo {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-.opcao-domingo h4 {
-    font-size: 16px;
-    color: #444;
-    margin-bottom: 5px;
-}
-
+.preco-item,
+.preco-item .valor,
+.preco-item .forma-pgto,
+.separador-ou,
+.precos-domingo,
+.opcao-domingo,
+.opcao-domingo h4,
 .preco-discreto {
-    font-size: 18px;
-    font-weight: bold;
-    color: #666; /* Cor mais suave, menos chamativa que o vermelho */
+    display: none; /* Removidos */
 }
 
 /* --- SEÇÃO DELIVERY --- */
@@ -1150,6 +1161,32 @@ body {
     margin-bottom: 10px;
 }
 
+/* Botão CTA nas páginas internas */
+.cta-contato {
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+
+.btn-cta-interno {
+    display: inline-block;
+    background: linear-gradient(135deg, #420505 0%, #6a0909 100%);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(66, 5, 5, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-cta-interno:hover {
+    background: linear-gradient(135deg, #6a0909 0%, #420505 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(66, 5, 5, 0.4);
+}
+
 /* ===========================================
    RESPONSIVIDADE
    =========================================== */
@@ -1234,12 +1271,35 @@ body {
         height: 40px;
     }
 
+    /* Áreas de Atuação - Tablet */
+    .areas-atuacao {
+        padding: 60px 30px;
+    }
+
+    .areas-title {
+        font-size: 2rem;
+    }
+
+    .areas-subtitle {
+        font-size: 1rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
+
+    .card-item {
+        min-height: 300px;
+        padding: 30px 20px;
+    }
+
     .container-planos {
-        gap: 15px;
+        flex-direction: column;
     }
 
     .cartao-plano {
-        width: 240px;
+        width: 100%;
     }
 }
 
@@ -1390,57 +1450,48 @@ body {
         padding: 20px 15px 40px 15px;
     }
 
-    /* Imagem destaque */
-    .imagem-destaque {
-        max-width: 100%;
+    /* Áreas de Atuação - Mobile */
+    .areas-atuacao {
+        padding: 50px 20px;
     }
 
-    .texto-marketing {
-        font-size: 16px;
+    .areas-header {
+        margin-bottom: 40px;
     }
 
-    /* Self Service */
-    .self-service-area {
-        padding: 40px 20px;
+    .areas-title {
+        font-size: 1.75rem;
+        line-height: 1.2;
     }
 
-    .titulo-secao {
-        font-size: 22px;
-        text-align: center;
+    .areas-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
     }
 
-    .btn-dia {
-        padding: 10px 20px;
-        font-size: 14px;
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .carrossel-mini {
-        max-width: 100%;
+    .card-item {
+        min-height: auto;
+        padding: 28px 20px;
     }
 
-    .img-carrossel {
-        width: 240px;
-        height: 155px;
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
     }
 
-    .textos-explicativos {
-        max-width: 100%;
+    .card-title {
+        font-size: 1.15rem;
     }
 
-    /* Preços em coluna no mobile */
-    .caixa-preco-destaque {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .preco-item .valor {
-        font-size: 22px;
-    }
-
-    .precos-domingo {
-        flex-direction: column;
-        gap: 15px;
+    .card-description {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
     }
 
     /* Delivery */
@@ -1606,11 +1657,41 @@ body {
     }
 
     .hero-arrow-left {
-        left: 10px;
+        left: 8px;
     }
 
     .hero-arrow-right {
-        right: 10px;
+        right: 8px;
+    }
+
+    /* Áreas de Atuação - Mobile Pequeno */
+    .areas-atuacao {
+        padding: 40px 15px;
+    }
+
+    .areas-title {
+        font-size: 1.5rem;
+    }
+
+    .areas-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .card-item {
+        padding: 24px 18px;
+    }
+
+    .card-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
     }
 
     .img-carrossel {

@@ -323,107 +323,162 @@
 
                 <hr class="separador-secao" />
 
-                <!-- SEÇÃO 1 -->
-                <div class="secao self-service-area" id="secao1">
-                    <h2 class="titulo-secao">Seção 1</h2>
-
-                    <!-- Botões de Troca (Tabs) -->
-                    <div class="botoes-dias">
-                        <button
-                            class="btn-dia ativo"
-                            onclick="mostrarAba('semana', this)"
-                        >
-                            Opção 1
-                        </button>
-                        <button
-                            class="btn-dia"
-                            onclick="mostrarAba('domingo', this)"
-                        >
-                            Opção 2
-                        </button>
+                <!-- ========== SEÇÃO C: ÁREAS DE ATUAÇÃO ========== -->
+                <section id="areas-atuacao" class="areas-atuacao">
+                    <div class="areas-header">
+                        <h2 class="areas-title">Como Podemos Ajudar Você</h2>
+                        <p class="areas-subtitle">
+                            Soluções jurídicas especializadas para a proteção
+                            dos seus direitos digitais
+                        </p>
                     </div>
 
-                    <!-- CONTEÚDO: OPÇÃO 1 -->
-                    <div id="aba-semana" class="conteudo-aba ativa">
-                        <!-- Mini Carrossel (Scroll Horizontal) -->
-                        <div class="carrossel-mini">
-                            <img
-                                src="imagens/imagem1.png"
-                                alt="Imagem 1"
-                                class="img-carrossel"
-                            />
-                            <img
-                                src="imagens/imagem2.png"
-                                alt="Imagem 2"
-                                class="img-carrossel"
-                            />
-                            <img
-                                src="imagens/imagem3.png"
-                                alt="Imagem 3"
-                                class="img-carrossel"
-                            />
-                        </div>
-
-                        <div class="textos-explicativos">
-                            <h3>Título da Opção 1</h3>
-                            <p>Descrição da opção 1.</p>
-
-                            <!-- Preços Destacados -->
-                            <div class="caixa-preco-destaque">
-                                <div class="preco-item dinheiro">
-                                    <span class="valor">R$ 00,00</span>
-                                    <span class="forma-pgto">forma 1</span>
-                                </div>
-                                <span class="separador-ou">ou</span>
-                                <div class="preco-item cartao">
-                                    <span class="valor">R$ 00,00</span>
-                                    <span class="forma-pgto">forma 2</span>
-                                </div>
+                    <div class="cards-grid">
+                        <!-- Card 1: Vazamento de Dados Pessoais -->
+                        <div class="card-item">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M12 17C10.34 17 9 15.66 9 14C9 12.34 10.34 11 12 11C13.66 11 15 12.34 15 14C15 15.66 13.66 17 12 17ZM18 8H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6H8.9C8.9 4.29 10.29 2.9 12 2.9C13.71 2.9 15.1 4.29 15.1 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8ZM18 20H6V10H18V20Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- CONTEÚDO: OPÇÃO 2 -->
-                    <div id="aba-domingo" class="conteudo-aba">
-                        <!-- Mini Carrossel (Scroll Horizontal) -->
-                        <div class="carrossel-mini">
-                            <img
-                                src="imagens/imagem1.png"
-                                alt="Imagem 1"
-                                class="img-carrossel"
-                            />
-                            <img
-                                src="imagens/imagem2.png"
-                                alt="Imagem 2"
-                                class="img-carrossel"
-                            />
-                            <img
-                                src="imagens/imagem3.png"
-                                alt="Imagem 3"
-                                class="img-carrossel"
-                            />
+                            <h3 class="card-title">
+                                Vazamento de Dados Pessoais
+                            </h3>
+                            <p class="card-description">
+                                Proteja seus dados e busque reparação em casos
+                                de exposição indevida de informações pessoais.
+                            </p>
+                            <a href="vazamento-dados.html" class="card-link"
+                                >Saiba Mais →</a
+                            >
                         </div>
 
-                        <div class="textos-explicativos">
-                            <h3>Título da Opção 2</h3>
-                            <p>Descrição da opção 2.</p>
+                        <!-- Card 2: Conformidade com a LGPD -->
+                        <div class="card-item">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M19 3H14.82C14.4 1.84 13.3 1 12 1C10.7 1 9.6 1.84 9.18 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Conformidade com a LGPD</h3>
+                            <p class="card-description">
+                                Consultoria especializada para adequação e
+                                compliance empresarial à Lei Geral de Proteção
+                                de Dados.
+                            </p>
+                            <a href="conformidade-lgpd.html" class="card-link"
+                                >Saiba Mais →</a
+                            >
+                        </div>
 
-                            <!-- Preços Menos Destacados -->
-                            <div class="precos-domingo">
-                                <div class="opcao-domingo">
-                                    <h4>Suboção 1</h4>
-                                    <span class="preco-discreto">R$ 00,00</span>
-                                </div>
-                                <div class="opcao-domingo">
-                                    <h4>Subopção 2</h4>
-                                    <span class="preco-discreto"
-                                        >R$ 00,00 <small>/ unidade</small></span
+                        <!-- Card 3: Segurança e Privacidade Digital -->
+                        <div class="card-item">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z"
+                                        fill="currentColor"
+                                    />
+                                    <line
+                                        x1="2"
+                                        y1="2"
+                                        x2="22"
+                                        y2="22"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="card-title">
+                                Segurança e Privacidade Digital
+                            </h3>
+                            <p class="card-description">
+                                Defesa dos seus direitos fundamentais no
+                                ambiente digital e orientação sobre proteção de
+                                privacidade.
+                            </p>
+                            <a
+                                href="seguranca-privacidade.html"
+                                class="card-link"
+                                >Saiba Mais →</a
+                            >
+                        </div>
+
+                        <!-- Card 4: Indenizações e Danos Morais -->
+                        <div class="card-item">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M9 3L7.17 5H4C2.9 5 2 5.9 2 7V19C2 20.1 2.9 21 4 21H20C21.1 21 22 20.1 22 19V7C22 5.9 21.1 5 20 5H16.83L15 3H9ZM12 18C9.24 18 7 15.76 7 13H9C9 14.66 10.34 16 12 16C13.66 16 15 14.66 15 13H17C17 15.76 14.76 18 12 18Z"
+                                        fill="currentColor"
+                                    />
+                                    <path
+                                        d="M11 11V7H13V11H11Z"
+                                        fill="currentColor"
+                                    />
+                                    <circle
+                                        cx="18"
+                                        cy="9"
+                                        r="2"
+                                        fill="#C7A86F"
+                                    />
+                                    <text
+                                        x="18"
+                                        y="10.5"
+                                        text-anchor="middle"
+                                        font-size="2"
+                                        fill="white"
+                                        font-weight="bold"
                                     >
-                                </div>
+                                        $
+                                    </text>
+                                </svg>
                             </div>
+                            <h3 class="card-title">
+                                Indenizações e Danos Morais
+                            </h3>
+                            <p class="card-description">
+                                Ações judiciais para reparação de danos causados
+                                por violações de dados e direitos digitais.
+                            </p>
+                            <a href="indenizacoes-danos.html" class="card-link"
+                                >Saiba Mais →</a
+                            >
                         </div>
                     </div>
-                </div>
+                </section>
+                <!-- ========== FIM DA SEÇÃO C: ÁREAS DE ATUAÇÃO ========== -->
 
                 <hr class="separador-secao" />
 

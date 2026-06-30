@@ -184,3 +184,47 @@ document.addEventListener("DOMContentLoaded", function () {
   // Começa a observar o trust banner
   observer.observe(trustBanner);
 });
+
+// ========== ANIMAÇÃO CASCATA - SEÇÃO ÁREAS DE ATUAÇÃO (INTERSECTION OBSERVER) ==========
+document.addEventListener("DOMContentLoaded", function () {
+  const areasSection = document.getElementById("areas-atuacao");
+
+  // Verifica se a seção existe na página
+  if (!areasSection) return;
+
+  const cards = document.querySelectorAll(".card-item");
+
+  // Configuração do IntersectionObserver
+  const observerOptions = {
+    root: null, // Usa o viewport como referência
+    rootMargin: "0px",
+    threshold: 0.15, // Dispara quando 15% da seção está visível
+  };
+
+  // Callback que será executado quando a seção entrar no viewport
+  const observerCallback = function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Anima cada card com um delay progressivo (efeito cascata)
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("animate");
+          }, index * 150); // 150ms de delay entre cada card
+        });
+
+        // Para de observar após iniciar as animações
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Cria o observer
+  const cardsObserver = new IntersectionObserver(
+    observerCallback,
+    observerOptions,
+  );
+
+  // Começa a observar a seção de áreas de atuação
+  cardsObserver.observe(areasSection);
+});
+// ========== FIM DA ANIMAÇÃO CASCATA ==========
