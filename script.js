@@ -228,3 +228,195 @@ document.addEventListener("DOMContentLoaded", function () {
   cardsObserver.observe(areasSection);
 });
 // ========== FIM DA ANIMAÇÃO CASCATA ==========
+
+// ========================================
+// ANIMAÇÃO FADE IN LATERAL - SEÇÃO SOBRE O PROFISSIONAL
+// ========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sobreSection = document.getElementById("sobre-profissional");
+
+  // Verifica se a seção existe na página
+  if (!sobreSection) return;
+
+  const colunaFoto = sobreSection.querySelector(".coluna-foto");
+  const colunaTexto = sobreSection.querySelector(".coluna-texto");
+
+  // Configuração do IntersectionObserver
+  const observerOptions = {
+    root: null, // Usa o viewport como referência
+    rootMargin: "0px",
+    threshold: 0.2, // Dispara quando 20% do elemento está visível
+  };
+
+  // Callback que será executado quando o elemento entrar no viewport
+  const observerCallback = function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Adiciona a classe 'visible' que ativa as animações
+        if (colunaFoto) colunaFoto.classList.add("visible");
+        if (colunaTexto) colunaTexto.classList.add("visible");
+
+        // Para de observar após iniciar as animações
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Cria o observer
+  const sobreObserver = new IntersectionObserver(
+    observerCallback,
+    observerOptions,
+  );
+
+  // Começa a observar a seção sobre o profissional
+  sobreObserver.observe(sobreSection);
+});
+
+// ========================================
+// BOTÃO CTA WHATSAPP - PULSE ESTÁ NO CSS
+// (A animação pulse já está implementada via @keyframes no CSS)
+// Não requer JavaScript adicional, mas você pode adicionar
+// eventos de tracking de cliques aqui se necessário
+// ========================================
+
+// Exemplo opcional de tracking de clique no botão WhatsApp:
+document.addEventListener("DOMContentLoaded", function () {
+  const btnWhatsApp = document.querySelector(".btn-whatsapp-cta");
+
+  if (btnWhatsApp) {
+    btnWhatsApp.addEventListener("click", function (e) {
+      // Analytics ou tracking podem ser adicionados aqui
+      console.log("Botão WhatsApp clicado - Seção CTA Final");
+
+      // Se você estiver usando Google Analytics:
+      // gtag('event', 'click', {
+      //   'event_category': 'CTA',
+      //   'event_label': 'WhatsApp Final'
+      // });
+    });
+  }
+});
+
+// ========================================
+// FAQ ACCORDION - LÓGICA INTERATIVA
+// ========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const faqSection = document.getElementById("faq-section");
+
+  // Verifica se a seção FAQ existe na página
+  if (!faqSection) return;
+
+  const faqHeader = document.querySelector(".faq-header");
+  const faqItems = document.querySelectorAll(".faq-item");
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  // ===== ANIMAÇÃO DE ENTRADA DO TÍTULO =====
+  const headerObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          headerObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.2,
+    },
+  );
+
+  if (faqHeader) {
+    headerObserver.observe(faqHeader);
+  }
+
+  // ===== ANIMAÇÃO CASCATA DOS ITENS =====
+  const itemsObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Anima cada item com delay progressivo (efeito cascata)
+          faqItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("animate");
+            }, index * 100); // 100ms entre cada item
+          });
+
+          // Para de observar após iniciar animações
+          itemsObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.1,
+    },
+  );
+
+  if (faqSection) {
+    itemsObserver.observe(faqSection);
+  }
+
+  // ===== LÓGICA DO ACCORDION =====
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", function () {
+      const faqItem = this.parentElement;
+      const faqAnswer = faqItem.querySelector(".faq-answer");
+      const isActive = faqItem.classList.contains("active");
+
+      // Fecha todos os outros itens (comportamento acordeon)
+      faqItems.forEach((item) => {
+        if (item !== faqItem) {
+          item.classList.remove("active");
+          const answer = item.querySelector(".faq-answer");
+          if (answer) {
+            answer.style.maxHeight = null;
+          }
+        }
+      });
+
+      // Alterna o item clicado
+      if (isActive) {
+        // Fecha o item se já estava aberto
+        faqItem.classList.remove("active");
+        faqAnswer.style.maxHeight = null;
+      } else {
+        // Abre o item
+        faqItem.classList.add("active");
+        // Define o max-height dinamicamente baseado no conteúdo
+        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+      }
+    });
+  });
+
+  // ===== SUPORTE PARA DEEP LINKING (ABRIR PERGUNTA ESPECÍFICA VIA URL) =====
+  // Exemplo: pagina.html#faq-1 irá abrir automaticamente a primeira pergunta
+  if (window.location.hash && window.location.hash.startsWith("#faq-")) {
+    const targetId = window.location.hash.substring(1);
+    const targetItem = document.getElementById(targetId);
+
+    if (targetItem && targetItem.classList.contains("faq-item")) {
+      // Aguarda as animações iniciais
+      setTimeout(() => {
+        // Abre o item
+        targetItem.classList.add("active");
+        const answer = targetItem.querySelector(".faq-answer");
+        if (answer) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+
+        // Rola suavemente até o item
+        targetItem.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        // Adiciona um destaque visual temporário
+        targetItem.classList.add("highlight");
+        setTimeout(() => {
+          targetItem.classList.remove("highlight");
+        }, 1500);
+      }, 500);
+    }
+  }
+});
+// ========== FIM DA LÓGICA FAQ ACCORDION ==========
