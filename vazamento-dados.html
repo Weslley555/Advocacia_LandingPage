@@ -3,9 +3,58 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vazamento de Dados Pessoais | Advocacia Digital</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+        <title>Vazamento de Dados Pessoais | Dr. Weslley Oliveira - Advocacia Digital</title>
+
+        <meta name="description" content="Saiba o que caracteriza um vazamento de dados, seus direitos e como buscar reparação com assessoria especializada em Direito Digital e LGPD." />
+
+        <meta property="og:title" content="Vazamento de Dados Pessoais | Dr. Weslley Oliveira" />
+        <meta property="og:description" content="Saiba o que caracteriza um vazamento de dados, seus direitos e como buscar reparação com assessoria especializada em Direito Digital e LGPD." />
+        <meta property="og:image" content="https://doutorweslley.adv.br/imagens/Banner_p.png" />
+        <meta property="og:url" content="https://doutorweslley.adv.br/vazamento-dados.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content="Dr. Weslley Oliveira - Advocacia Digital" />
+        <link rel="canonical" href="https://doutorweslley.adv.br/vazamento-dados.html" />
+        <link rel="icon" type="image/svg+xml" href="imagens/logo.svg" />
+
+        <link rel="stylesheet" href="style.css?v=2" />
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "FAQPage",
+              "@id": "https://doutorweslley.adv.br/vazamento-dados.html#faq",
+              "name": "Vazamento de Dados Pessoais - Perguntas Frequentes",
+              "description": "Saiba o que caracteriza um vazamento de dados, seus direitos e como buscar reparação.",
+              "mainEntity": []
+            },
+            {
+              "@type": "LegalService",
+              "@id": "https://doutorweslley.adv.br/#organization",
+              "name": "Dr. Weslley - Advocacia Digital",
+              "image": "https://doutorweslley.adv.br/imagens/Banner_p.png",
+              "telephone": "+5511988887777",
+              "url": "https://doutorweslley.adv.br"
+            },
+            {
+              "@type": "Person",
+              "@id": "https://doutorweslley.adv.br/#person",
+              "name": "Dr. Weslley Oliveira",
+              "jobTitle": "Especialista LGPD e Vazamento de Dados",
+              "worksFor": {
+                "@id": "https://doutorweslley.adv.br/#organization"
+              }
+            }
+          ]
+        }
+        </script>
     </head>
     <body>
         <header class="cabecalho-simples">
@@ -31,10 +80,10 @@
             <div class="faq-container">
                 <!-- Pergunta 1 -->
                 <div class="faq-item" id="faq-1">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-1-answer">
                         O que caracteriza um vazamento de dados pessoais?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1-answer">
                         <div class="faq-answer-content">
                             <p>
                                 O vazamento de dados pessoais ocorre quando suas
@@ -59,10 +108,10 @@
 
                 <!-- Pergunta 2 -->
                 <div class="faq-item" id="faq-2">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-2-answer">
                         Quais são os sinais de que meus dados vazaram?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2-answer">
                         <div class="faq-answer-content">
                             <p>Fique atento aos seguintes sinais:</p>
                             <ul>
@@ -97,10 +146,10 @@
 
                 <!-- Pergunta 3 -->
                 <div class="faq-item" id="faq-3">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-3-answer">
                         Como vocês podem me ajudar em caso de vazamento?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3-answer">
                         <div class="faq-answer-content">
                             <p>
                                 Nosso escritório oferece suporte completo
@@ -150,10 +199,10 @@
 
                 <!-- Pergunta 4 -->
                 <div class="faq-item" id="faq-4">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-4-answer">
                         Quais direitos a LGPD me garante em caso de vazamento?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4-answer">
                         <div class="faq-answer-content">
                             <p>
                                 A Lei Geral de Proteção de Dados (Lei nº
@@ -192,10 +241,10 @@
 
                 <!-- Pergunta 5 -->
                 <div class="faq-item" id="faq-5">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-5-answer">
                         Posso receber indenização por vazamento de dados?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-5-answer">
                         <div class="faq-answer-content">
                             <p>
                                 <strong>Sim!</strong> Você tem direito a buscar
@@ -232,10 +281,10 @@
 
                 <!-- Pergunta 6 -->
                 <div class="faq-item" id="faq-6">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-6-answer">
                         Qual o prazo para entrar com uma ação?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-6-answer">
                         <div class="faq-answer-content">
                             <p>
                                 É muito importante agir rapidamente após
@@ -273,10 +322,10 @@
 
                 <!-- Pergunta 7 -->
                 <div class="faq-item" id="faq-7">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-7-answer">
                         O que fazer imediatamente após descobrir o vazamento?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-7-answer">
                         <div class="faq-answer-content">
                             <p>
                                 Se você descobriu que seus dados vazaram, tome
@@ -313,10 +362,10 @@
 
                 <!-- Pergunta 8 -->
                 <div class="faq-item" id="faq-8">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-8-answer">
                         Por que escolher este escritório?
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-8-answer">
                         <div class="faq-answer-content">
                             <p>Nossos diferenciais incluem:</p>
                             <ul>
@@ -350,7 +399,7 @@
             </div>
 
             <div class="cta-contato">
-                <a href="index.html#contato" class="btn-cta-interno"
+                <a href="index.html#cta-final" class="btn-cta-interno"
                     >Entre em Contato Agora</a
                 >
             </div>
