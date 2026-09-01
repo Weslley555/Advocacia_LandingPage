@@ -1,22 +1,28 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Site</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+        <title>Dr. Weslley - Especialista LGPD e Vazamento de Dados</title>
 
         <!-- Título e Descrição Básica para o Google -->
-        <meta name="description" content="Descrição do site" />
+        <meta name="description" content="Consultoria especializada em vazamento de informações pessoais, litígios da LGPD e segurança da informação." />
 
         <!-- Configuração para o WhatsApp, Facebook e Instagram (Open Graph) -->
-        <meta property="og:title" content="Site" />
-        <meta property="og:description" content="Descrição do site" />
-        <meta
-            property="og:image"
-            content="https://seusite.com.br/imagens/capa.jpg"
-        />
-        <meta property="og:url" content="https://seusite.com.br" />
+        <meta property="og:title" content="Dr. Weslley - Especialista LGPD e Vazamento de Dados" />
+        <meta property="og:description" content="Consultoria especializada em vazamento de informações pessoais, litígios da LGPD e segurança da informação." />
+        <meta property="og:image" content="https://doutorweslley.adv.br/imagens/Banner_p.png" />
+        <meta property="og:url" content="https://doutorweslley.adv.br" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content="Dr. Weslley Oliveira - Advocacia Digital" />
+        <link rel="canonical" href="https://doutorweslley.adv.br" />
+        <link rel="icon" type="image/svg+xml" href="imagens/logo.svg" />
 
         <!-- Google Analytics: carregado apenas após consentimento de cookies (LGPD) -->
         <script>
@@ -43,7 +49,33 @@
             }
         </script>
 
-        <link rel="stylesheet" href="style.css?v=5" />
+        <link rel="stylesheet" href="style.css?v=6" />
+
+        <!-- Schema.org Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "LegalService",
+              "@id": "https://doutorweslley.adv.br/#organization",
+              "name": "Dr. Weslley - Advocacia Digital",
+              "image": "https://doutorweslley.adv.br/imagens/Banner_p.png",
+              "telephone": "+5511988887777",
+              "url": "https://doutorweslley.adv.br"
+            },
+            {
+              "@type": "Person",
+              "@id": "https://doutorweslley.adv.br/#person",
+              "name": "Dr. Weslley Dias",
+              "jobTitle": "Especialista LGPD e Vazamento de Dados",
+              "worksFor": {
+                "@id": "https://doutorweslley.adv.br/#organization"
+              }
+            }
+          ]
+        }
+        </script>
     </head>
     <body>
         <div class="colunas">
@@ -53,11 +85,14 @@
                         src="imagens/logo.svg"
                         alt="Logo do Escritório"
                         class="imagem-logo"
+                        width="400"
+                        height="120"
+                        loading="lazy"
                     />
                 </div>
 
                 <div class="textos-chamativos">
-                    <h2 class="titulo-destaque">Dr. Weslley</h2>
+                    <div class="titulo-destaque">Dr. Weslley</div>
                     <p class="mini-texto">
                         Especialista de casos de vazamentos de informações
                         pessoais.
@@ -88,7 +123,7 @@
                                 Especialistas em vazamento de informações
                                 pessoais e segurança digital
                             </p>
-                            <a href="#contato" class="hero-cta"
+                            <a href="#cta-final" class="hero-cta"
                                 >Fale com um Especialista</a
                             >
                         </div>
@@ -104,13 +139,13 @@
                         ></div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
-                            <h1 class="hero-title">
+                            <h2 class="hero-title">
                                 Segurança Jurídica para seus Dados
-                            </h1>
+                            </h2>
                             <p class="hero-subtitle">
                                 Atuação estratégica em casos de violação da LGPD
                             </p>
-                            <a href="#contato" class="hero-cta"
+                            <a href="#cta-final" class="hero-cta"
                                 >Fale com um Especialista</a
                             >
                         </div>
@@ -126,14 +161,14 @@
                         ></div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
-                            <h1 class="hero-title">
+                            <h2 class="hero-title">
                                 Defesa Especializada em Crimes Digitais
-                            </h1>
+                            </h2>
                             <p class="hero-subtitle">
                                 Experiência comprovada em litígios complexos de
                                 tecnologia
                             </p>
-                            <a href="#contato" class="hero-cta"
+                            <a href="#cta-final" class="hero-cta"
                                 >Fale com um Especialista</a
                             >
                         </div>
@@ -145,7 +180,7 @@
                         onclick="mudarSlideHero(-1)"
                         aria-label="Slide Anterior"
                     >
-                        <svg
+                        <svg aria-hidden="true"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
@@ -166,7 +201,7 @@
                         onclick="mudarSlideHero(1)"
                         aria-label="Próximo Slide"
                     >
-                        <svg
+                        <svg aria-hidden="true"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
@@ -187,14 +222,23 @@
                     <div class="hero-dots">
                         <span
                             class="hero-dot active"
+                            tabindex="0"
+                            role="button"
+                            aria-label="Ir para slide 1"
                             onclick="irParaSlideHero(0)"
                         ></span>
                         <span
                             class="hero-dot"
+                            tabindex="0"
+                            role="button"
+                            aria-label="Ir para slide 2"
                             onclick="irParaSlideHero(1)"
                         ></span>
                         <span
                             class="hero-dot"
+                            tabindex="0"
+                            role="button"
+                            aria-label="Ir para slide 3"
                             onclick="irParaSlideHero(2)"
                         ></span>
                     </div>
@@ -207,7 +251,7 @@
                         <!-- Item 1: Atendimento em todo o Brasil -->
                         <div class="trust-item">
                             <div class="trust-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="40"
                                     height="40"
                                     viewBox="0 0 24 24"
@@ -228,7 +272,7 @@
                         <!-- Item 2: Especialistas em LGPD -->
                         <div class="trust-item">
                             <div class="trust-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="40"
                                     height="40"
                                     viewBox="0 0 24 24"
@@ -247,7 +291,7 @@
                         <!-- Item 3: Selo OAB -->
                         <div class="trust-item">
                             <div class="trust-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="40"
                                     height="40"
                                     viewBox="0 0 24 24"
@@ -266,7 +310,7 @@
                         <!-- Item 4: Atendimento Sigiloso -->
                         <div class="trust-item">
                             <div class="trust-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="40"
                                     height="40"
                                     viewBox="0 0 24 24"
@@ -301,7 +345,7 @@
                         <!-- Card 1: Vazamento de Dados Pessoais -->
                         <div class="card-item">
                             <div class="card-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="48"
                                     height="48"
                                     viewBox="0 0 24 24"
@@ -329,7 +373,7 @@
                         <!-- Card 2: Conformidade com a LGPD -->
                         <div class="card-item">
                             <div class="card-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="48"
                                     height="48"
                                     viewBox="0 0 24 24"
@@ -356,7 +400,7 @@
                         <!-- Card 3: Segurança e Privacidade Digital -->
                         <div class="card-item">
                             <div class="card-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="48"
                                     height="48"
                                     viewBox="0 0 24 24"
@@ -396,7 +440,7 @@
                         <!-- Card 4: Indenizações e Danos Morais -->
                         <div class="card-item">
                             <div class="card-icon">
-                                <svg
+                                <svg aria-hidden="true"
                                     width="48"
                                     height="48"
                                     viewBox="0 0 24 24"
@@ -452,10 +496,14 @@
                         <!-- Coluna 1: Foto do Profissional -->
                         <div class="coluna-foto">
                             <img
-                                src="imagens/dr-weslley.jpg"
+                                src="imagens/foto-placeholder.svg"
                                 alt="Dr. Weslley Oliveira - Especialista em Direito Digital e Proteção de Dados"
                                 class="foto-profissional"
+                                width="600"
+                                height="800"
+                                loading="lazy"
                             />
+                            <p class="registro-oab" style="text-align: center; margin-top: 10px; font-weight: bold; color: #555;">OAB/SP 000.000</p>
                         </div>
 
                         <!-- Coluna 2: Conteúdo Textual -->
@@ -468,7 +516,7 @@
                             <p class="paragrafo-sobre">
                                 Com mais de uma década de experiência em Direito
                                 Digital e Proteção de Dados, Dr. Weslley
-                                Oliveira é referência nacional em casos de
+                                Dias é referência nacional em casos de
                                 vazamento de informações sensíveis e violações à
                                 LGPD. Sua atuação combina profundo conhecimento
                                 técnico com estratégias jurídicas assertivas
@@ -498,13 +546,13 @@
                             consultoria agora.
                         </h2>
                         <a
-                            href="https://wa.me/5511999999999?text=Olá,%20preciso%20de%20consultoria%20sobre%20vazamento%20de%20dados"
+                            href="https://wa.me/5511988887777?text=Olá,%20preciso%20de%20consultoria%20sobre%20vazamento%20de%20dados"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="btn-whatsapp-cta"
                         >
                             <!-- Ícone WhatsApp via SVG -->
-                            <svg
+                            <svg aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"
@@ -527,8 +575,10 @@
         <footer class="rodape-minimalista">
             <span>&copy; 2026 Site</span>
             <span class="separador">|</span>
-            <a href="#contato">Contato</a>
-            <a href="#social">Social</a>
+            <span>OAB/SP 000.000</span>
+            <span class="separador">|</span>
+            <a href="#cta-final">Contato</a>
+            <a href="#cta-final">Social</a>
             <a href="termos_uso.html">Termos de Uso</a>
             <a href="politica_privacidade.html">Política de Privacidade</a>
         </footer>

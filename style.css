@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap");
-* {
+﻿* {
     box-sizing: border-box;
 }
 
@@ -69,10 +66,10 @@ body {
 
 .logo {
     color: black;
-    font-family: mont;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
-    width: 100px;
-    height: 20px;
+    width: auto;
+    height: auto;
     background-color: transparent;
 }
 
@@ -1036,8 +1033,9 @@ body {
     text-align: center;
 }
 
-.cabecalho-simples img {
-    height: 60px; /* Altura corrigida — era 450px por engano */
+.cabecalho-simples .logo {
+    width: auto !important;
+    height: 120px !important; /* Logo maior para melhor visibilidade */
 }
 
 .container-legal {
@@ -1623,8 +1621,9 @@ body {
     }
 
     /* Cabeçalho simples */
-    .cabecalho-simples img {
-        height: 50px;
+    .cabecalho-simples .logo {
+        width: auto !important;
+        height: 80px !important;
     }
 
     .container-legal {

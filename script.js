@@ -64,12 +64,22 @@ function reiniciarAutoplayHero() {
 // Inicialização do Hero Carousel
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.getElementById("hero-carousel");
+  const dots = document.querySelectorAll(".hero-dot");
 
   if (carousel) {
     iniciarAutoplayHero();
     carousel.addEventListener("mouseenter", pausarAutoplayHero);
     carousel.addEventListener("mouseleave", iniciarAutoplayHero);
   }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("keydown", function(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault(); // Evita scroll ao usar barra de espaço
+        irParaSlideHero(index);
+      }
+    });
+  });
 });
 
 // --- LÓGICA DO AVISO DE COOKIES (LGPD) ---
@@ -243,7 +253,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (item !== faqItem) {
           item.classList.remove("active");
           const answer = item.querySelector(".faq-answer");
+          const otherQuestion = item.querySelector(".faq-question");
           if (answer) answer.style.maxHeight = null;
+          if (otherQuestion) otherQuestion.setAttribute("aria-expanded", "false");
         }
       });
 
@@ -251,9 +263,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isActive) {
         faqItem.classList.remove("active");
         faqAnswer.style.maxHeight = null;
+        this.setAttribute("aria-expanded", "false");
       } else {
         faqItem.classList.add("active");
         faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+        this.setAttribute("aria-expanded", "true");
       }
     });
   });
@@ -267,7 +281,9 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         targetItem.classList.add("active");
         const answer = targetItem.querySelector(".faq-answer");
+        const question = targetItem.querySelector(".faq-question");
         if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
+        if (question) question.setAttribute("aria-expanded", "true");
         targetItem.scrollIntoView({ behavior: "smooth", block: "center" });
         targetItem.classList.add("highlight");
         setTimeout(() => targetItem.classList.remove("highlight"), 1500);
