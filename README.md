@@ -13,6 +13,7 @@
 4. [Lógica do JavaScript](#4-lógica-do-javascript)
 5. [Acessibilidade (A11y) e Semântica](#5-acessibilidade-a11y-e-semântica)
 6. [Observações e Pontos de Atenção](#6-observações-e-pontos-de-atenção)
+7. [Bugs e erros Fixados em cada versão](#7-bugs-e-erros-fixados-em-cada-versão)
 
 ---
 
@@ -39,8 +40,6 @@ Advocacia - Copia/
 │
 ├── imagens/                       # SVGs, logos e imagens usadas no site
 ├── instrucoes/                    # Documentação antiga (FAQ accordion, trust banner)
-├── firebase.json                  # Configuração de deploy do Firebase Hosting
-└── .firebaserc                    # Projeto Firebase associado
 ```
 
 ### Objetivo de cada página
@@ -413,3 +412,12 @@ Esta seção registra achados importantes para manutenção futura (não são bu
 | Consentimento | `localStorage.cookiesAceitos` | `"sim"` carrega Analytics; `"nao"` não carrega |
 | Responsividade | media queries | Breakpoints em 1024 / 768 / 480 / 400 px |
 | Deploy | Firebase Hosting | `firebase.json` na raiz |
+
+### Bugs e erros Fixados em cada versão
+
+Esta seção registra a correção dos pontos de atenção do item 6 organizados por versão.
+
+1.1. **Bug Fix: Variáveis CSS (`:root`) para cores e opacidades**
+* **Problema:** O arquivo `style.css` possuía dezenas de cores (hexadecimais e `rgba`) "hardcoded" pelo código, dificultando a manutenção e tornando qualquer mudança de paleta arriscada.
+* **Correção:** Centralização de toda a paleta em um bloco `:root`. Foram criadas variáveis semânticas para cores sólidas (ex: `--color-gold`) e para canais RGB (ex: `--color-gold-rgb`). Todas as ocorrências no CSS foram substituídas pelo uso de `var()` e `rgba(var(...), opacidade)`.
+* **Por que importa:** A manutenção visual agora é centralizada, rápida e segura. Alterar qualquer cor do tema (mesmo com transparência) exige edição em um único lugar, eliminando o risco de erros por substituição manual.
