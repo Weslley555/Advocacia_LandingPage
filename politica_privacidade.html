@@ -3,16 +3,123 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap"
+            rel="stylesheet"
+        />
+
         <title>
-            Política de Privacidade | Dr. Weslley Oliveira - Advocacia Digital
+            Política de Privacidade | Dr. Weslley Dias - Advocacia Digital
         </title>
         <meta name="robots" content="noindex" />
-        <link rel="stylesheet" href="style.css" />
+
+        <meta
+            name="description"
+            content="Política de Privacidade do site do Dr. Weslley Dias - Advocacia Digital especializada em LGPD, proteção de dados e direito digital."
+        />
+
+        <meta
+            property="og:title"
+            content="Política de Privacidade | Dr. Weslley Dias"
+        />
+        <meta
+            property="og:description"
+            content="Leia a Política de Privacidade do site do Dr. Weslley Dias - Advocacia Digital."
+        />
+        <meta
+            property="og:image"
+            content="https://doutorweslley.adv.br/imagens/Banner_p.png"
+        />
+        <meta
+            property="og:url"
+            content="https://doutorweslley.adv.br/politica_privacidade.html"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta
+            property="og:site_name"
+            content="Dr. Weslley Dias - Advocacia Digital"
+        />
+        <link
+            rel="canonical"
+            href="https://doutorweslley.adv.br/politica_privacidade.html"
+        />
+        <link rel="icon" type="image/svg+xml" href="imagens/logo.svg" />
+
+        <!-- Google Analytics: carregado apenas após consentimento de cookies (LGPD) -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            function carregarAnalytics() {
+                var script = document.createElement("script");
+                script.async = true;
+                script.src =
+                    "https://www.googletagmanager.com/gtag/js?id=G-5WRWWNTSXB";
+                document.head.appendChild(script);
+                script.onload = function () {
+                    gtag("js", new Date());
+                    gtag("config", "G-5WRWWNTSXB");
+                };
+            }
+
+            // Se já aceitou em visita anterior, carrega direto
+            if (localStorage.getItem("cookiesAceitos") === "sim") {
+                carregarAnalytics();
+            }
+        </script>
+
+        <link rel="stylesheet" href="style.css?v=6" />
+
+        <!-- Schema.org Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://doutorweslley.adv.br/politica_privacidade.html#webpage",
+              "name": "Política de Privacidade | Dr. Weslley Dias",
+              "description": "Política de Privacidade do site do Dr. Weslley Dias - Advocacia Digital.",
+              "isPartOf": {
+                "@id": "https://doutorweslley.adv.br/#website"
+              }
+            },
+            {
+              "@type": "LegalService",
+              "@id": "https://doutorweslley.adv.br/#organization",
+              "name": "Dr. Weslley - Advocacia Digital",
+              "url": "https://doutorweslley.adv.br"
+            },
+            {
+              "@type": "Person",
+              "@id": "https://doutorweslley.adv.br/#person",
+              "name": "Dr. Weslley Dias",
+              "jobTitle": "Especialista LGPD e Vazamento de Dados",
+              "worksFor": {
+                "@id": "https://doutorweslley.adv.br/#organization"
+              }
+            }
+          ]
+        }
+        </script>
     </head>
+
     <body>
         <header class="cabecalho-simples">
             <a href="index.html">
-                <img src="imagens/logo.svg" alt="Logo do Escritório" />
+                <img
+                    src="imagens/logo.svg"
+                    alt="Logo do Escritório Dr. Weslley Dias"
+                    class="logo"
+                    width="400"
+                    height="120"
+                />
             </a>
         </header>
 
@@ -21,7 +128,7 @@
 
             <p>
                 O escritório de
-                <strong>Dr. Weslley Oliveira</strong>, inscrito na OAB/[UF] sob
+                <strong>Dr. Weslley Dias</strong>, inscrito na OAB/[UF] sob
                 o nº <strong>[NÚMERO DA OAB]</strong> e no CPF/CNPJ sob o nº
                 <strong>[CNPJ ou CPF]</strong>, é o responsável pelo tratamento
                 dos dados pessoais coletados neste site e pelos canais de
@@ -170,7 +277,7 @@
             <p>
                 Dúvidas, solicitações ou reclamações relacionadas à privacidade
                 devem ser enviadas para:<br />
-                <strong>Responsável:</strong> Dr. Weslley Oliveira<br />
+                <strong>Responsável:</strong> Dr. Weslley Dias<br />
                 <strong>WhatsApp:</strong> [NÚMERO DO WHATSAPP]<br />
                 <strong>E-mail:</strong> [E-MAIL, SE HOUVER]
             </p>
@@ -184,13 +291,41 @@
             </p>
 
             <p><em>Última atualização: Junho de 2026.</em></p>
+
+            <div class="cta-contato">
+                <a href="index.html#cta-final" class="btn-cta-interno"
+                    >Entre em Contato Agora</a
+                >
+            </div>
         </main>
 
         <footer class="rodape-minimalista">
             <span>&copy; 2026 Advocacia Digital</span>
+            <span class="titulo-endereco"> Rua Que não existe, 123, Cidade</span>
             <span class="separador">|</span>
             <a href="termos_uso.html">Termos de Uso</a>
             <a href="index.html">Voltar ao Início</a>
         </footer>
+
+        <div id="aviso-cookies" class="aviso-cookies">
+            <p>
+                Usamos cookies para analisar o tráfego e melhorar sua
+                experiência. Você pode aceitar ou recusar — o site funciona
+                normalmente nas duas opções. Saiba mais em nossa
+                <a href="politica_privacidade.html">Política de Privacidade</a>
+                e nos nossos
+                <a href="termos_uso.html">Termos de Uso</a>.
+            </p>
+            <div class="botoes-cookies">
+                <button id="btn-aceitar-cookies" class="btn-cookies aceitar">
+                    Aceitar
+                </button>
+                <button id="btn-recusar-cookies" class="btn-cookies recusar">
+                    Recusar
+                </button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>

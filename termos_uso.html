@@ -3,14 +3,118 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Termos de Uso | Dr. Weslley Oliveira - Advocacia Digital</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Termos de Uso | Dr. Weslley Dias - Advocacia Digital</title>
         <meta name="robots" content="noindex" />
-        <link rel="stylesheet" href="style.css" />
+
+        <meta
+            name="description"
+            content="Termos de Uso do site do Dr. Weslley Dias - Advocacia Digital especializada em LGPD, vazamento de dados e direito digital."
+        />
+
+        <meta property="og:title" content="Termos de Uso | Dr. Weslley Dias" />
+        <meta
+            property="og:description"
+            content="Leia os Termos de Uso do site do Dr. Weslley Dias - Advocacia Digital."
+        />
+        <meta
+            property="og:image"
+            content="https://doutorweslley.adv.br/imagens/Banner_p.png"
+        />
+        <meta
+            property="og:url"
+            content="https://doutorweslley.adv.br/termos_uso.html"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta
+            property="og:site_name"
+            content="Dr. Weslley Dias - Advocacia Digital"
+        />
+        <link
+            rel="canonical"
+            href="https://doutorweslley.adv.br/termos_uso.html"
+        />
+        <link rel="icon" type="image/svg+xml" href="imagens/logo.svg" />
+
+        <!-- Google Analytics: carregado apenas após consentimento de cookies (LGPD) -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            function carregarAnalytics() {
+                var script = document.createElement("script");
+                script.async = true;
+                script.src =
+                    "https://www.googletagmanager.com/gtag/js?id=G-5WRWWNTSXB";
+                document.head.appendChild(script);
+                script.onload = function () {
+                    gtag("js", new Date());
+                    gtag("config", "G-5WRWWNTSXB");
+                };
+            }
+
+            // Se já aceitou em visita anterior, carrega direto
+            if (localStorage.getItem("cookiesAceitos") === "sim") {
+                carregarAnalytics();
+            }
+        </script>
+
+        <link rel="stylesheet" href="style.css?v=6" />
+
+        <!-- Schema.org Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://doutorweslley.adv.br/termos_uso.html#webpage",
+              "name": "Termos de Uso | Dr. Weslley Dias",
+              "description": "Termos de Uso do site do Dr. Weslley Dias - Advocacia Digital.",
+              "isPartOf": {
+                "@id": "https://doutorweslley.adv.br/#website"
+              }
+            },
+            {
+              "@type": "LegalService",
+              "@id": "https://doutorweslley.adv.br/#organization",
+              "name": "Dr. Weslley - Advocacia Digital",
+              "url": "https://doutorweslley.adv.br"
+            },
+            {
+              "@type": "Person",
+              "@id": "https://doutorweslley.adv.br/#person",
+              "name": "Dr. Weslley Dias",
+              "jobTitle": "Especialista LGPD e Vazamento de Dados",
+              "worksFor": {
+                "@id": "https://doutorweslley.adv.br/#organization"
+              }
+            }
+          ]
+        }
+        </script>
     </head>
+
     <body>
         <header class="cabecalho-simples">
             <a href="index.html">
-                <img src="imagens/logo.svg" alt="Logo do Escritório" />
+                <img
+                    src="imagens/logo.svg"
+                    alt="Logo do Escritório Dr. Weslley Dias"
+                    class="logo"
+                    width="400"
+                    height="120"
+                />
             </a>
         </header>
 
@@ -19,7 +123,7 @@
 
             <p>
                 Este site é mantido por
-                <strong>Dr. Weslley Oliveira</strong>, advogado inscrito na
+                <strong>Dr. Weslley Dias</strong>, advogado inscrito na
                 <strong>OAB/[UF] sob o nº [NÚMERO DA OAB]</strong>, atuante nas
                 áreas de Direito Digital e Proteção de Dados. Ao acessar e
                 utilizar este site, ou ao entrar em contato pelos canais aqui
@@ -121,13 +225,41 @@
             </p>
 
             <p><em>Última atualização: Junho de 2026.</em></p>
+
+            <div class="cta-contato">
+                <a href="index.html#cta-final" class="btn-cta-interno"
+                    >Entre em Contato Agora</a
+                >
+            </div>
         </main>
 
         <footer class="rodape-minimalista">
             <span>&copy; 2026 Advocacia Digital</span>
+            <span class="titulo-endereco"> Rua Que não existe, 123, Cidade</span>
             <span class="separador">|</span>
             <a href="politica_privacidade.html">Política de Privacidade</a>
             <a href="index.html">Voltar ao Início</a>
         </footer>
+
+        <div id="aviso-cookies" class="aviso-cookies">
+            <p>
+                Usamos cookies para analisar o tráfego e melhorar sua
+                experiência. Você pode aceitar ou recusar — o site funciona
+                normalmente nas duas opções. Saiba mais em nossa
+                <a href="politica_privacidade.html">Política de Privacidade</a>
+                e nos nossos
+                <a href="termos_uso.html">Termos de Uso</a>.
+            </p>
+            <div class="botoes-cookies">
+                <button id="btn-aceitar-cookies" class="btn-cookies aceitar">
+                    Aceitar
+                </button>
+                <button id="btn-recusar-cookies" class="btn-cookies recusar">
+                    Recusar
+                </button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
