@@ -1,64 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120">
   <defs>
     <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#f4d03f;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#c49102;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0b400;stop-opacity:1" />
     </linearGradient>
   </defs>
 
-  <!-- Escudo Digital -->
-  <path d="M 50 20 L 70 15 L 90 20 L 90 50 C 90 65 80 75 70 80 C 60 75 50 65 50 50 Z"
-        fill="none" stroke="#1a237e" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Escudo -->
+  <path d="M 50 22 L 70 16 L 90 22 L 90 52 C 90 68 80 78 70 83 C 60 78 50 68 50 52 Z"
+        fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
 
   <!-- Balança -->
-  <g transform="translate(70, 45)">
-    <!-- Haste central -->
-    <line x1="0" y1="0" x2="0" y2="25" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round"/>
-
-    <!-- Barra horizontal -->
-    <line x1="-15" y1="5" x2="15" y2="5" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round"/>
-
-    <!-- Prato esquerdo -->
+  <g transform="translate(70, 46)">
+    <line x1="0" y1="0" x2="0" y2="26" stroke="#e8c547" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-15" y1="5" x2="15" y2="5" stroke="#e8c547" stroke-width="2.5" stroke-linecap="round"/>
     <g transform="translate(-15, 5)">
-      <line x1="0" y1="0" x2="-6" y2="8" stroke="url(#goldGradient)" stroke-width="1.5"/>
-      <line x1="0" y1="0" x2="6" y2="8" stroke="url(#goldGradient)" stroke-width="1.5"/>
-      <ellipse cx="0" cy="10" rx="7" ry="2" fill="url(#goldGradient)" opacity="0.8"/>
+      <line x1="0" y1="0" x2="-6" y2="8" stroke="#e8c547" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="6" y2="8" stroke="#e8c547" stroke-width="1.5"/>
+      <ellipse cx="0" cy="10" rx="7" ry="2" fill="url(#goldGradient)" opacity="0.9"/>
     </g>
-
-    <!-- Prato direito -->
     <g transform="translate(15, 5)">
-      <line x1="0" y1="0" x2="-6" y2="8" stroke="url(#goldGradient)" stroke-width="1.5"/>
-      <line x1="0" y1="0" x2="6" y2="8" stroke="url(#goldGradient)" stroke-width="1.5"/>
-      <ellipse cx="0" cy="10" rx="7" ry="2" fill="url(#goldGradient)" opacity="0.8"/>
+      <line x1="0" y1="0" x2="-6" y2="8" stroke="#e8c547" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="6" y2="8" stroke="#e8c547" stroke-width="1.5"/>
+      <ellipse cx="0" cy="10" rx="7" ry="2" fill="url(#goldGradient)" opacity="0.9"/>
     </g>
-
-    <!-- Base -->
-    <ellipse cx="0" cy="26" rx="8" ry="2.5" fill="url(#goldGradient)"/>
+    <ellipse cx="0" cy="27" rx="8" ry="2.5" fill="url(#goldGradient)"/>
   </g>
 
   <!-- Elementos digitais (pixels) -->
-  <rect x="45" y="25" width="3" height="3" fill="#1a237e" opacity="0.3"/>
-  <rect x="45" y="32" width="3" height="3" fill="#1a237e" opacity="0.5"/>
-  <rect x="92" y="25" width="3" height="3" fill="#1a237e" opacity="0.3"/>
-  <rect x="92" y="32" width="3" height="3" fill="#1a237e" opacity="0.5"/>
-
-  <!-- Linhas de conexão digital -->
-  <path d="M 48 60 Q 55 65 62 68" fill="none" stroke="#1a237e" stroke-width="1" opacity="0.4" stroke-dasharray="2,2"/>
-  <path d="M 92 60 Q 85 65 78 68" fill="none" stroke="#1a237e" stroke-width="1" opacity="0.4" stroke-dasharray="2,2"/>
+  <rect x="46" y="28" width="3" height="3" fill="#ffffff" opacity="0.4"/>
+  <rect x="46" y="35" width="3" height="3" fill="#ffffff" opacity="0.6"/>
+  <rect x="91" y="28" width="3" height="3" fill="#ffffff" opacity="0.4"/>
+  <rect x="91" y="35" width="3" height="3" fill="#ffffff" opacity="0.6"/>
 
   <!-- Texto -->
-  <text x="115" y="45" font-family="'Montserrat', 'Arial', sans-serif" font-size="28" font-weight="700" fill="#1a237e" letter-spacing="1">
+  <text x="115" y="49" font-family="'Montserrat', 'Arial', sans-serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="1">
     ADVOCACIA
   </text>
-  <text x="115" y="70" font-family="'Montserrat', 'Arial', sans-serif" font-size="24" font-weight="400" fill="#c49102" letter-spacing="2">
+  <text x="115" y="76" font-family="'Montserrat', 'Arial', sans-serif" font-size="24" font-weight="400" fill="#e8c547" letter-spacing="2">
     DIGITAL
   </text>
 
-  <!-- Linha decorativa -->
-  <line x1="115" y1="75" x2="270" y2="75" stroke="url(#goldGradient)" stroke-width="1.5" opacity="0.6"/>
-
   <!-- Subtítulo -->
-  <text x="115" y="88" font-family="'Open Sans', 'Arial', sans-serif" font-size="11" font-weight="400" fill="#666" letter-spacing="1.5">
+  <text x="115" y="92" font-family="'Open Sans', 'Arial', sans-serif" font-size="11" font-weight="400" fill="#e8eaf6" letter-spacing="1.5" opacity="0.9">
     PROTEÇÃO DE DADOS • LGPD • DIREITO DIGITAL
   </text>
 </svg>
