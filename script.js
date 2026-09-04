@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   dots.forEach((dot, index) => {
-    dot.addEventListener("keydown", function(event) {
+    dot.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Evita scroll ao usar barra de espaço
         irParaSlideHero(index);
