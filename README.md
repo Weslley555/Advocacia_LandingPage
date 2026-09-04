@@ -1,3 +1,9 @@
+> ⚠️ Este é um projeto de portfólio com dados fictícios (nome, endereço, telefone e OAB). Interações como WhatsApp, redes sociais e envio de formulário são simuladas via modal informativo por questões de segurança e privacidade.
+
+🔗 https://advocacia-lp.web.app/
+
+---
+
 # Landing Page — Escritório de Advocacia Digital (LGPD & Vazamento de Dados)
 
 > Documentação técnica e guia de estudos para manutenção do projeto.
@@ -449,3 +455,8 @@ Esta seção registra a correção dos pontos de atenção do item 6 organizados
 * **Problema:** As 4 páginas de FAQ declaravam um bloco `FAQPage` no JSON-LD com o array `"mainEntity": []` vazio — marcavam a página como FAQ sem listar nenhuma pergunta/resposta, tornando a marcação de dados estruturados inútil para o Google.
 * **Correção:** Extraí as perguntas e respostas reais de cada `.faq-item` (via `.faq-question` e `.faq-answer-content`) e preenchi o `mainEntity` de cada página com objetos `Question`/`Answer` no formato schema.org, preservando o texto exato do conteúdo visível.
 * **Por que importa:** Com `mainEntity` preenchido, as páginas ficam elegíveis para **rich results de FAQ** na busca do Google, o que pode renderizar as perguntas diretamente na SERP, aumentando a visibilidade e a taxa de cliques. Uma marcação `FAQPage` vazia era ignorada (ou pior, podia ser interpretada como erro de implementação), então isso transforma dados mortos em valor real de SEO.
+
+1.3 **Bug Fix / Feature: Modal informativo (WhatsApp, redes sociais, contato) e estilização do banner de cookies**
+* **Problema:** Projetos de portfólio com links reais de WhatsApp e redes sociais fictícias expõem dados de terceiros ou geram frustração ao simular interações quebradas. Além disso, o banner de cookies original utilizava um cinza genérico e um botão vermelho puro que quebravam a identidade visual sofisticada (navy/dourado) do site.
+* **Correção:** Implementação de um modal informativo de portfólio estruturado em três camadas (HTML no `index.html`, estilos integrados ao design system no `style.css` e lógica global no `script.js`), convertendo os gatilhos de conversão (WhatsApp, formulário de contato e redes sociais) para abrir o modal com mensagens contextuais específicas. Paralelamente, o banner de cookies foi redesenhado com gradiente navy, botões em formato pill-shape, ação de aceitar no dourado da marca e recusar em estilo ghost neutro.
+* **Por que importa:** O modal deixa explícito ao recrutador ou avaliador que as interações são simuladas intencionalmente por questões de segurança e privacidade em um projeto de portfólio. A refatoração do banner de cookies elimina elementos visuais agressivos e genéricos, integrando o aviso de privacidade perfeitamente à identidade visual premium do escritório.

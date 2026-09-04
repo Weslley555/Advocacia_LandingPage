@@ -1,3 +1,33 @@
+// ========== MODAL INFORMATIVO (PORTFÓLIO) ==========
+function abrirModal(titulo, mensagem, posicaoBotao) {
+    if (posicaoBotao === undefined) posicaoBotao = 'direita';
+    var modal = document.getElementById('modal-portfolio');
+    var modalTitulo = document.getElementById('modal-titulo');
+    var modalMensagem = document.getElementById('modal-mensagem');
+    var modalFooter = document.getElementById('modal-footer');
+
+    if (!modal || !modalTitulo || !modalMensagem || !modalFooter) return false;
+
+    modalTitulo.textContent = titulo;
+    modalMensagem.textContent = mensagem;
+
+    modalFooter.classList.remove('modal-footer-esquerda', 'modal-footer-direita');
+    modalFooter.classList.add(posicaoBotao === 'esquerda' ? 'modal-footer-esquerda' : 'modal-footer-direita');
+
+    modal.classList.add('visivel');
+    document.body.style.overflow = 'hidden';
+
+    return false;
+}
+
+function fecharModal() {
+    var modal = document.getElementById('modal-portfolio');
+    if (!modal) return;
+
+    modal.classList.remove('visivel');
+    document.body.style.overflow = '';
+}
+
 // ========== LÓGICA DO HERO CAROUSEL (CARROSSEL PRINCIPAL) ==========
 let indiceSlideHero = 0;
 let temporizadorHero = null;
@@ -317,4 +347,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 500);
     }
   }
+
+  // --- MODAL: fechar clicando no overlay ou pressionando ESC ---
+  const overlay = document.getElementById('modal-portfolio');
+  if (overlay) {
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) fecharModal();
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') fecharModal();
+  });
 });
