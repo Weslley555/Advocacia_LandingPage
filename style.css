@@ -1918,3 +1918,7 @@ body {
         padding: 35px 25px;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide, .faq-item, .card-item { transition: none; animation: none; }
+}
