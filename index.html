@@ -398,8 +398,9 @@
                         Teve seus dados vazados? Não espere. Agende uma
                         consultoria agora.
                     </h2>
-                    <a href="https://wa.me/5511988887777?text=Olá,%20preciso%20de%20consultoria%20sobre%20vazamento%20de%20dados"
-                        target="_blank" rel="noopener noreferrer" class="btn-whatsapp-cta">
+                    <a href="#"
+                        class="btn-whatsapp-cta"
+                        onclick="return abrirModal('Aviso de Portfólio', 'O redirecionamento para o WhatsApp está desativado por questões de segurança e privacidade neste projeto de portfólio.', 'direita')">
                         <!-- Ícone WhatsApp via SVG -->
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="currentColor" class="icone-whatsapp">
@@ -420,8 +421,8 @@
         <span>OAB/SP 000.000</span>
         <span class="titulo-endereco"> Rua Que não existe, 123, Cidade</span>
         <span class="separador">|</span>
-        <a href="#cta-final">Contato</a>
-        <a href="#cta-final">Social</a>
+        <a href="#" onclick="return abrirModal('Aviso de Portfólio', 'O envio de dados está desativado.', 'direita')">Contato</a>
+        <a href="#" onclick="return abrirModal('Aviso de Portfólio', 'As redes sociais são fictícias, servindo apenas para demonstração do layout.', 'direita')">Social</a>
         <a href="termos_uso.html">Termos de Uso</a>
         <a href="politica_privacidade.html">Política de Privacidade</a>
     </footer>
@@ -442,6 +443,16 @@
             <button id="btn-recusar-cookies" class="btn-cookies recusar">
                 Recusar
             </button>
+        </div>
+    </div>
+
+    <div id="modal-portfolio" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <div class="modal-caixa">
+            <h3 id="modal-titulo" class="modal-titulo"></h3>
+            <p id="modal-mensagem" class="modal-mensagem"></p>
+            <div id="modal-footer" class="modal-footer modal-footer-direita">
+                <button type="button" class="modal-btn-entendido" onclick="fecharModal()">Entendido</button>
+            </div>
         </div>
     </div>
 
