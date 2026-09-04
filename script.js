@@ -8,11 +8,27 @@ function mostrarSlideHero(indice) {
   const slides = document.querySelectorAll(".hero-slide");
   const dots = document.querySelectorAll(".hero-dot");
 
-  slides.forEach((slide) => slide.classList.remove("active"));
-  dots.forEach((dot) => dot.classList.remove("active"));
+  slides.forEach((slide, i) => {
+    const isActive = i === indice;
+    if (isActive) {
+      slide.classList.add("active");
+    } else {
+      slide.classList.remove("active");
+    }
+    slide.setAttribute("aria-hidden", String(!isActive));
+    slide.inert = !isActive;
+  });
 
-  if (slides[indice]) slides[indice].classList.add("active");
-  if (dots[indice]) dots[indice].classList.add("active");
+  dots.forEach((dot, i) => {
+    const isActive = i === indice;
+    if (isActive) {
+      dot.classList.add("active");
+      dot.setAttribute("aria-current", "true");
+    } else {
+      dot.classList.remove("active");
+      dot.removeAttribute("aria-current");
+    }
+  });
 }
 
 // Função para mudar slide (setas)
@@ -57,7 +73,10 @@ function pausarAutoplayHero() {
 function reiniciarAutoplayHero() {
   pausarAutoplayHero();
   setTimeout(() => {
-    iniciarAutoplayHero();
+    const semAnimacao = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!semAnimacao) {
+      iniciarAutoplayHero();
+    }
   }, 2000);
 }
 
@@ -67,13 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const dots = document.querySelectorAll(".hero-dot");
 
   if (carousel) {
-    iniciarAutoplayHero();
+    const semAnimacao = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!semAnimacao) {
+      iniciarAutoplayHero();
+    }
     carousel.addEventListener("mouseenter", pausarAutoplayHero);
-    carousel.addEventListener("mouseleave", iniciarAutoplayHero);
+    carousel.addEventListener("mouseleave", () => {
+      const semAnimacao = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!semAnimacao) {
+        iniciarAutoplayHero();
+      }
+    });
   }
 
   dots.forEach((dot, index) => {
-    dot.addEventListener("keydown", function(event) {
+    dot.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Evita scroll ao usar barra de espaço
         irParaSlideHero(index);
